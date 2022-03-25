@@ -102,42 +102,42 @@
                                </tr>
                             </thead>
                             <tbody class="item-material-table">
-                                <tr class="item-material" data-original="data\Items & Materials\Adamantine.png">
+                                <tr class="item-material">
                                     <td class="item-material-title">Adamantine</td>
                                     <td class="item-material-catagory">materials</td>
                                     <td class="item-material-type">uncommon</td>
                                 </tr>
-                                <tr class="item-material" data-original="data\Items & Materials\Bronze.png">
+                                <tr class="item-material">
                                     <td class="item-material-title">Bronze</td>
                                     <td class="item-material-catagory">materials</td>
                                     <td class="item-material-type">none</td>
                                 </tr>
-                                <tr class="item-material" data-original="data\Items & Materials\Iron.png">
+                                <tr class="item-material">
                                     <td class="item-material-title">Iron</td>
                                     <td class="item-material-catagory">materials</td>
                                     <td class="item-material-type">none</td>
                                 </tr>
-                                <tr class="item-material" data-original="data\Items & Materials\Maritime Quartz.png">
+                                <tr class="item-material">
                                     <td class="item-material-title">Maritime Quartz</td>
                                     <td class="item-material-catagory">materials</td>
                                     <td class="item-material-type">rare</td>
                                 </tr>
-                                <tr class="item-material" data-original="data\Items & Materials\Mithril.png">
+                                <tr class="item-material">
                                     <td class="item-material-title">Mithril</td>
                                     <td class="item-material-catagory">materials</td>
                                     <td class="item-material-type">uncommon</td>
                                 </tr>
-                                <tr class="item-material" data-original="data\Items & Materials\Skybough Amber.png">
+                                <tr class="item-material">
                                     <td class="item-material-title">Skybough Amber</td>
                                     <td class="item-material-catagory">materials</td>
                                     <td class="item-material-type">very rare</td>
                                 </tr>
-                                <tr class="item-material" data-original="data\Items & Materials\Steel.png">
+                                <tr class="item-material">
                                     <td class="item-material-title">Steel</td>
                                     <td class="item-material-catagory">materials</td>
                                     <td class="item-material-type">none</td>
                                 </tr>
-                                <tr class="item-material" data-original="">
+                                <tr class="item-material">
                                     <td class="item-material-title">New Weapons</td>
                                     <td class="item-material-catagory">weapons</td>
                                     <td class="item-material-type">none</td>
@@ -150,13 +150,6 @@
         </section>
 
     </main><!-- End #main -->
-
-    <div class="modal">
-        <figure class="rounded viewport" id="magnifying_area">
-            <img src="" alt="" class="full-img" width="100%">
-        </figure>
-        <p class="caption"></p>
-    </div>
 
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer" style="height: 106.5px;">
@@ -189,7 +182,18 @@
             };
 		};
 	</script>
-    <script src="assets/js/gallery-image.js"></script>
+
+    <script>
+        for (let i = 0; i < $('.item-material .item-material-title').length; i++) {
+            const x = $('.item-material .item-material-title')[i];
+            if (DM == 'true') {
+                $(x).html('<a href="utilities-playable-race-info.html?DM=true&item=' + $(x).text() + '">' + $(x).text() + '</a>');
+            }
+            else {
+                $(x).html('<a href="utilities-playable-race-info.html?item=' + $(x).text() + '">' + $(x).text() + '</a>');
+            };
+        };
+    </script>
 
     <script>
         $(document).ready(function () {

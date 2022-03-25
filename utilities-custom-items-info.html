@@ -81,15 +81,15 @@
 
                 <ol>
                     <li>Utilities</li>
-                    <li><a href="utilities-playable-races.html">Races</a></li>
-                    <li class="race-name">race</li>
+                    <li><a href="utilities-custom-items.html">Items & Materials</a></li>
+                    <li class="item-name">item</li>
                 </ol>
-                <h2 class="race-name">race</h2>
+                <h2 class="item-name">item</h2>
 
             </div>
         </section><!-- End Breadcrumbs -->
 
-        <section data-aos="zoom out" data-aos-duration="250" class="races">
+        <section data-aos="zoom out" data-aos-duration="250" class="items">
             <div class="container">
 
                 <div class="row">
@@ -137,86 +137,34 @@
     <!-- Card Details -->
 
     <script>
-        var jsonRaces = (function () {
-            var jsonRaces = null;
+        var jsonItems = (function () {
+            var jsonItems = null;
             $.ajax({
                 'async': false,
                 'global': false,
-                'url': 'data/races.json',
+                'url': 'data/items.json',
                 'dataType': "json",
                 'success': function (data) {
-                    jsonRaces = data;
+                    jsonItems = data;
                 }
             });
-            return jsonRaces;
-        })();
-
-        var jsonTerrains = (function () {
-            var jsonTerrains = null;
-            $.ajax({
-                'async': false,
-                'global': false,
-                'url': 'data/race terrains.json',
-                'dataType': "json",
-                'success': function (data) {
-                    jsonTerrains = data;
-                }
-            });
-            return jsonTerrains;
+            return jsonItems;
         })();
     </script>
 
     <script>
-        var firstTerrain = true;
-        let race = params.get('race');
-        for (let k = 0; k < jsonRaces.races.length; k++) {
-            const x = jsonRaces.races[k];
+        let item = params.get('item');
+        for (let k = 0; k < jsonItems.items.length; k++) {
+            const x = jsonItems.items[k];
             if (x.name == race) {
-                var raceIndex = k;
+                var itemIndex = k;
                 break
             }
         }
 
-        $('.race-name').text(jsonRaces.races[raceIndex].name);
-        for (let j = 0; j < Object.keys(jsonTerrains).length; j++) {
-            const terrain = Object.keys(jsonTerrains)[j];
-            if (terrain != '*' && jsonTerrains[terrain].includes(jsonRaces.races[raceIndex].name)) {
-                if (firstTerrain == true) {
-                    $('h2.race-name').append('; ' + terrain);
-                    firstTerrain = false;
-                }
-                else {
-                    $('h2.race-name').append(', ' + terrain);
-                };
-            };
-        };
+        $('.item-name').text(jsonItems.items[itemIndex].name);
 
-        $('.row').html(jsonRaces.races[raceIndex].data)
-
-        $('thead tr th').addClass('col-md-2')
-
-
-        
-        for (let i = 0; i < $('.collapse').length; i++) {
-            const x = $('.collapse')[i];
-            $(x).attr('id', 'subrace-' + i).addClass('overflow-hidden');
-        };
-
-        for (let i = 0; i < $('h3').length; i++) {
-            const x = $('h3')[i];
-            $(x).addClass('mb-0')
-
-            $(x).on('click', function () {
-                for (let j = 0; j < $('h3').length; j++) {
-                    if ( j != i ) {
-                        $('#subrace-' + j).collapse('hide')
-                    }
-                    else {
-                        $('#subrace-' + j).collapse('toggle')
-                    };
-                };
-            });
-        };
+        $('.row').html(jsonItems.items[itemIndex].data)
     </script>
 
 </body>
