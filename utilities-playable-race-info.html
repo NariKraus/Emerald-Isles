@@ -181,7 +181,7 @@
         $('.race-name').text(jsonRaces.races[raceIndex].name);
         for (let j = 0; j < Object.keys(jsonTerrains).length; j++) {
             const terrain = Object.keys(jsonTerrains)[j];
-            if (terrain != '*' && jsonTerrains[terrain].includes(jsonRaces.races[i].name)) {
+            if (terrain != '*' && jsonTerrains[terrain].includes(jsonRaces.races[raceIndex].name)) {
                 if (firstTerrain == true) {
                     $('h2.race-name').append('; ' + terrain);
                     firstTerrain = false;
