@@ -377,6 +377,14 @@
             return jsonRaces;
         })();
 
+        $(document).ready(function(){
+            $.getJSON("data/races.json", function(data){
+                var testRaces = data;
+            }).fail(function(){
+                console.log("An error has occurred.");
+            });
+        });
+
         var jsonTerrains = (function () {
             var jsonTerrains = null;
             $.ajax({
