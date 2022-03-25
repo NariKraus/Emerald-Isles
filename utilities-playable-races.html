@@ -364,6 +364,13 @@
 		let DM = params.get('DM');
 		if (DM == 'true') {
 			$('.nav-link:hidden').attr('hidden', false);
+            for (let i = 0; i < $('a[href]').length; i++) {
+                const x = $('a[href]')[i];
+                $(x).attr("href", function(i, href) {
+                    return href + '?DM=true';
+                });
+                console.log( $(x).attr('href') );
+            };
 		};
 	</script>
 
@@ -408,7 +415,12 @@
                 i ++;
                 $race = jsonRaces.races[i].name
             };
-            window.location.href = 'utilities-playable-race-info.html?race=' + $race;
+            if (DM == 'true') {
+                window.location.href = 'utilities-playable-race-info.html?DM=true&race=' + $race;
+		    }
+            else {
+                window.location.href = 'utilities-playable-race-info.html?race=' + $race;
+            };
         });
     </script>
 

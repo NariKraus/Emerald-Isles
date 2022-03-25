@@ -54,17 +54,17 @@
                             <li><a class="nav-link" href="utilities-custom-items.html">Items & Materials</a></li>
                             <li><a class="nav-link" hidden href="utilities-statblocks.html">Stat Blocks</a></li>
                             <li><a class="nav-link" href="utilities-npcs.html">NPCs</a></li>
-							<div class="break"></div>
-							<li class="dropdown"><a class="nav-link" href="utilities-optional-rules.html">Optional Rules <i class="bi bi-chevron-down"></i></a>
-								<ul>
-									<li><a class="nav-link" href="utilities-optional-rules.html#shield-variants">Shield Variants <i class="bi bi-question-circle-fill" style="color: var(--bs-warning);"></i></a></li>
-									<li><a class="nav-link" href="utilities-optional-rules.html#weapon-properties">Weapon Properties <i class="bi bi-hand-thumbs-up-fill" style="color: var(--bs-success);"></i></a></li>
-									<li><a class="nav-link" href="utilities-optional-rules.html#gritty-realism">Gritty Realism <i class="bi bi-question-circle-fill" style="color: var(--bs-warning);"></i></a></li>
-									<li><a class="nav-link" href="utilities-optional-rules.html#underwater-combat">Underwater Combat <i class="bi bi-question-circle-fill" style="color: var(--bs-warning);"></i></a></li>
-									<li><a class="nav-link" href="utilities-optional-rules.html#lingering-injuries">Lingering Injuries <i class="bi bi-hand-thumbs-up-fill" style="color: var(--bs-success);"></i></a></li>
-									<li><a class="nav-link" href="utilities-optional-rules.html#lifestyle-expenses">Lifestyle Expenses <i class="bi bi-question-circle-fill" style="color: var(--bs-warning);"></i></a></li>
-								</ul>
-							</li>
+                            <div class="break"></div>
+                            <li class="dropdown"><a class="nav-link" href="utilities-optional-rules.html">Optional Rules <i class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a class="nav-link" href="utilities-optional-rules.html#shield-variants">Shield Variants <i class="bi bi-question-circle-fill" style="color: var(--bs-warning);"></i></a></li>
+                                    <li><a class="nav-link" href="utilities-optional-rules.html#weapon-properties">Weapon Properties <i class="bi bi-hand-thumbs-up-fill" style="color: var(--bs-success);"></i></a></li>
+                                    <li><a class="nav-link" href="utilities-optional-rules.html#gritty-realism">Gritty Realism <i class="bi bi-question-circle-fill" style="color: var(--bs-warning);"></i></a></li>
+                                    <li><a class="nav-link" href="utilities-optional-rules.html#underwater-combat">Underwater Combat <i class="bi bi-question-circle-fill" style="color: var(--bs-warning);"></i></a></li>
+                                    <li><a class="nav-link" href="utilities-optional-rules.html#lingering-injuries">Lingering Injuries <i class="bi bi-hand-thumbs-up-fill" style="color: var(--bs-success);"></i></a></li>
+                                    <li><a class="nav-link" href="utilities-optional-rules.html#lifestyle-expenses">Lifestyle Expenses <i class="bi bi-question-circle-fill" style="color: var(--bs-warning);"></i></a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -92,7 +92,7 @@
             <div class="container">
                 <div class="row">
 
-					<hr id="shield-variants">
+                    <hr id="shield-variants">
 
                     <!-- Shield Variants -->
                     <section>
@@ -297,7 +297,7 @@
                         </div>
                     </section>
 
-					<hr id="underwater-combat">
+                    <hr id="underwater-combat">
 
                     <!-- Underwater Combat -->
                     <section>
@@ -327,7 +327,7 @@
                                         If you are in water with your armor, likely you will want to take it off. The don/doff table for PHB 146 lists doff time (converted to rounds). This could be halved if you have assistance. You can attempt to remove your armor in the water, but you may not use your move during this time and it counts as doing your action (using up “breath” if submerged). If you have something sharp, you may attempt to cut your armor off with a successful DC 15 Dexterity (Acrobatics) check to cut the doff time in half.
                                     </p>
 
-                                    <div class="table-responsive">					
+                                    <div class="table-responsive">                    
                                         <table class="table table-dark table-bordered table-striped">
                                             <thead>
                                                 <tr>
@@ -391,11 +391,11 @@
                         </div>
                     </section>
 
-					<hr id="lingering-injuries">
+                    <hr id="lingering-injuries">
 
-					<!-- Lingering Injuries -->
-					<section>
-						<h2 data-bs-toggle="collapse" data-bs-target="#lingering-injuries-info" role="button" aria-expanded="false" aria-controls="lingering-injuries-info">
+                    <!-- Lingering Injuries -->
+                    <section>
+                        <h2 data-bs-toggle="collapse" data-bs-target="#lingering-injuries-info" role="button" aria-expanded="false" aria-controls="lingering-injuries-info">
                             Lingering Injuries <i class="bi bi-hand-thumbs-up-fill" style="color: var(--bs-success);"></i>
                         </h2>
 
@@ -430,7 +430,7 @@
                             <span id="Slashing" class="damage-type h5">Slashing</span>,
                             <span id="Thunder" class="damage-type h5">Thunder</span>
                         </div>
-					</section>
+                    </section>
 
                     <hr id="lifestyle-expenses">
 
@@ -570,40 +570,47 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
-	<script>
-		let params = (new URL(document.location)).searchParams;
-		let DM = params.get('DM');
-		if (DM == 'true') {
-			$('.nav-link:hidden').attr('hidden', false);
-		};
-	</script>
+    <script>
+        let params = (new URL(document.location)).searchParams;
+        let DM = params.get('DM');
+        if (DM == 'true') {
+            $('.nav-link:hidden').attr('hidden', false);
+            for (let i = 0; i < $('a[href]').length; i++) {
+                const x = $('a[href]')[i];
+                $(x).attr("href", function(i, href) {
+                    return href + '?DM=true';
+                });
+                console.log( $(x).attr('href') );
+            };
+        };
+    </script>
 
     <script>
         $('.title').addClass('h4')
 
-		var jsonInjuries = (function () {
-			var jsonInjuries = null;
-			$.ajax({
-				'async': false,
-				'global': false,
-				'url': 'data/lingering injuries.json',
-				'dataType': "json",
-				'success': function (data) {
-					jsonInjuries = data;
-				}
-			});
-			return jsonInjuries;
-		})();
+        var jsonInjuries = (function () {
+            var jsonInjuries = null;
+            $.ajax({
+                'async': false,
+                'global': false,
+                'url': 'data/lingering injuries.json',
+                'dataType': "json",
+                'success': function (data) {
+                    jsonInjuries = data;
+                }
+            });
+            return jsonInjuries;
+        })();
 
-		$('.damage-type').on('click', function() {
-			var damageType = $(this).attr('id');
+        $('.damage-type').on('click', function() {
+            var damageType = $(this).attr('id');
 
-			var win = window.open("about:blank", '_blank', 'height = 720px , width = 720px');
-			win.document.write('<title>Lingering Injuries: ' + damageType + '</title>');
-			win.document.write('<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">');
-			win.document.write(jsonInjuries[damageType]);
-			win.document.close();
-		});
+            var win = window.open("about:blank", '_blank', 'height = 720px , width = 720px');
+            win.document.write('<title>Lingering Injuries: ' + damageType + '</title>');
+            win.document.write('<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">');
+            win.document.write(jsonInjuries[damageType]);
+            win.document.close();
+        });
     </script>
 
 </body>
