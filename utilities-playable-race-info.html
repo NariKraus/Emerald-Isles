@@ -172,6 +172,7 @@
     <script>
         var firstTerrain = true;
         let race = params.get('race');
+        race = race.replace('%20', ' ')
         $race = "";
         var i = -1;
         while ($race != race) {
