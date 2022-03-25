@@ -382,7 +382,7 @@
             $.ajax({
                 'async': false,
                 'global': false,
-                'url': 'https://raw.githubusercontent.com/NariKraus/Emerald-Isles-Utilities/main/race%20terrains.json',
+                'url': 'data/race terrains.json',
                 'dataType': "json",
                 'success': function (data) {
                     jsonTerrains = data;
@@ -394,17 +394,13 @@
 
     <script>
         $(document).on( 'click', '.race-line', function () {
-
-            $this = $(this)
+            $this = $(this);
             $race = "";
-
-
             var i = -1;
             while ($race != $this.find('.race-name').text()) {
                 i ++;
                 $race = jsonRaces.races[i].name
-            }
-
+            };
             window.location.href = 'utilities-playable-race-info.html?race=' + $race;
         });
     </script>
