@@ -368,7 +368,7 @@
             $.ajax({
                 'async': false,
                 'global': false,
-                'url': 'https://raw.githubusercontent.com/NariKraus/Emerald-Isles-Utilities/main/races.json',
+                'url': 'data/races.json',
                 'dataType': "json",
                 'success': function (data) {
                     jsonRaces = data;
@@ -376,14 +376,6 @@
             });
             return jsonRaces;
         })();
-
-        $(document).ready(function(){
-            $.getJSON("data/races.json", function(data){
-                var testRaces = data;
-            }).fail(function(){
-                console.log("An error has occurred.");
-            });
-        });
 
         var jsonTerrains = (function () {
             var jsonTerrains = null;
@@ -429,8 +421,6 @@
                 else {
                     terrain_type = '*';
                 };
-
-                console.log(terrain_type)
 
                 var title = data[0];
         
