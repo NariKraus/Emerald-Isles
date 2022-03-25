@@ -150,6 +150,13 @@
 
 	<!-- Main JS File -->
 	<script src="assets/js/main.js"></script>
+	<script>
+		let params = (new URL(document.location)).searchParams;
+		let DM = params.get('DM');
+		if (DM == 'true') {
+			$('.nav-link:hidden').attr('hidden', false);
+		};
+	</script>
 	<script src="assets/js/gallery-image.js"></script>
 	<script src="assets/js/state-races.js"></script>
 
