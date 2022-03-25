@@ -407,21 +407,15 @@
     </script>
 
     <script>
-        $(document).on( 'click', '.race-line', function () {
-            $this = $(this);
-            $race = "";
-            var i = -1;
-            while ($race != $this.find('.race-name').text()) {
-                i ++;
-                $race = jsonRaces.races[i].name
-            };
+        for (let i = 0; i < $('.race-line .race-name').length; i++) {
+            const x = $('.race-line .race-name')[i];
             if (DM == 'true') {
-                window.location.href = 'utilities-playable-race-info.html?DM=true&race=' + $race;
-		    }
+                $(x).html('<a href="utilities-playable-race-info.html?DM=true&race=' + $(x).text() + '">' + $(x).text() + '</a>');
+            }
             else {
-                window.location.href = 'utilities-playable-race-info.html?race=' + $race;
+                $(x).html('<a href="utilities-playable-race-info.html?race=' + $(x).text() + '">' + $(x).text() + '</a>');
             };
-        });
+        };
     </script>
 
     <script>
