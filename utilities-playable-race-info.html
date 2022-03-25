@@ -169,18 +169,16 @@
     <script>
         var firstTerrain = true;
         let race = params.get('race');
-        race = race.replace('%20', ' ')
         $race = "";
-        var i = -1;
-        while ($race != race) {
-            i++;
-            $race = jsonRaces.races[i].name
-            if (i == 33 && $race != race) {
-                window.location.href = '404.html';
-            };
-        };
+        for (let k = 0; k < jsonRaces.races.length; k++) {
+            const x = jsonRaces.races[k];
+            if (x.name == race) {
+                var raceIndex = k;
+                break
+            }
+        }
 
-        $('.race-name').text(jsonRaces.races[i].name);
+        $('.race-name').text(jsonRaces.races[raceIndex].name);
         for (let j = 0; j < Object.keys(jsonTerrains).length; j++) {
             const terrain = Object.keys(jsonTerrains)[j];
             if (terrain != '*' && jsonTerrains[terrain].includes(jsonRaces.races[i].name)) {
@@ -194,7 +192,7 @@
             };
         };
 
-        $('.row').html(jsonRaces.races[i].data)
+        $('.row').html(jsonRaces.races[raceIndex].data)
 
         $('thead tr th').addClass('col-md-2')
 
