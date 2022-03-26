@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Emerald Isles - Point Buy</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+            <h1 class="logo"><a href="index.html">Emerald Isles</a></h1>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="dropdown"><a class="nav-link" href="states.html">States<i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a class="nav-link" href="states-bothamia.html">Bothamia</a></li>
+                            <li><a class="nav-link" href="states-cal'en.html">Cal'en</a></li>
+                            <li><a class="nav-link" href="states-godminia.html">Godminia</a></li>
+                            <li><a class="nav-link" href="states-khundus.html">Khundus</a></li>
+                            <li><a class="nav-link" href="states-nakara.html">Nakara</a></li>
+                            <li><a class="nav-link" href="states-sorasene.html">Sorasene</a></li>
+                            <li><a class="nav-link" href="states-syran.html">Syran</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a class="nav-link" href="#">Utilities <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a class="nav-link" href="utilities-playable-races.html">Races</a></li>
+                            <li><a class="nav-link" href="utilities-pantheon.html">Pantheon</a></li>
+                            <div class="break"></div>
+                            <li><a class="nav-link" href="utilities-custom-items.html">Items & Materials</a></li>
+                            <li><a class="nav-link" hidden href="utilities-statblocks.html">Stat Blocks</a></li>
+                            <li><a class="nav-link" href="utilities-npcs.html">NPCs</a></li>
+                            <div class="break"></div>
+                            <li class="dropdown"><a class="nav-link" href="utilities-optional-rules.html">Optional Rules <i class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a class="nav-link" href="utilities-optional-rules.html#shield-variants">Shield Variants <i class="bi bi-question-circle-fill" style="color: var(--bs-warning);"></i></a></li>
+                                    <li><a class="nav-link" href="utilities-optional-rules.html#weapon-properties">Weapon Properties <i class="bi bi-hand-thumbs-up-fill" style="color: var(--bs-success);"></i></a></li>
+                                    <li><a class="nav-link" href="utilities-optional-rules.html#gritty-realism">Gritty Realism <i class="bi bi-question-circle-fill" style="color: var(--bs-warning);"></i></a></li>
+                                    <li><a class="nav-link" href="utilities-optional-rules.html#underwater-combat">Underwater Combat <i class="bi bi-question-circle-fill" style="color: var(--bs-warning);"></i></a></li>
+                                    <li><a class="nav-link" href="utilities-optional-rules.html#lingering-injuries">Lingering Injuries <i class="bi bi-hand-thumbs-up-fill" style="color: var(--bs-success);"></i></a></li>
+                                    <li><a class="nav-link" href="utilities-optional-rules.html#lifestyle-expenses">Lifestyle Expenses <i class="bi bi-question-circle-fill" style="color: var(--bs-warning);"></i></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a class="nav-link" href="players.html">Players <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a class="nav-link" href="players.html">Players</a></li>
+                            <li><a class="nav-link" href="point-buy.html">Point Buy</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+        </div>
+    </header><!-- End Header -->
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+
+                <ol>
+                    <li>Point Buy</li>
+                </ol>
+                <h2>Point Buy</h2>
+
+            </div>
+        </section><!-- End Breadcrumbs -->
+
+        <section data-aos="zoom out" data-aos-duration="250" class="inner-page">
+            <div class="container">
+                
+                <table class="table table-dark table-bordered table-striped table-hover">
+                    <thead>
+                        <tr class="attributetop">
+                            <th style="width: 18%;">Attribute
+                            </th>
+                            <th style="width: 15%;">Ability Score</th>
+                            <th style="width: 8%;"></th>
+                            <th style="width: 12%;">Racial Bonus</th>
+                            <th style="width: 8%;"></th>
+                            <th style="width: 12%;">Total Score</th>
+                            <th style="width: 12%;">Modifier</th>
+                            <th style="width: 15%;">Point Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr class="attributeodd">
+                            <td class="text-start">Strength</td>
+                            <td>
+                                <input id="PointStr" type="number" value="8" min="7" max="18">
+                            </td>
+                            <td>+</td>
+                            <td>
+                                <input id="RaceStr" type="number" value="0" min="0" max="2">
+                            </td>
+                            <td>=</td>
+                            <td class="Total"><span id="TotalStr">8</span></td>
+                            <td class="Modifier"><span id="ModifierStr">-1</span></td>
+                            <td><span id="PointcostStr">0</span></td>
+                        </tr>
+                        <tr class="attributeeven">
+                            <td class="text-start">Dexterity</td>
+                            <td>
+                                <input id="PointDex" type="number" value="8" min="7" max="18">
+                            </td>
+                            <td>+</td>
+                            <td>
+                                <input id="RaceDex" type="number" value="0" min="0" max="2">
+                            </td>
+                            <td>=</td>
+                            <td class="Total"><span id="TotalDex">8</span></td>
+                            <td class="Modifier"><span id="ModifierDex">-1</span></td>
+                            <td><span id="PointcostDex">0</span></td>
+                        </tr>
+                        <tr class="attributeodd">
+                            <td class="text-start">Constitution</td>
+                            <td>
+                                <input id="PointCon" type="number" value="8" min="7" max="18">
+                            </td>
+                            <td>+</td>
+                            <td>
+                                <input id="RaceCon" type="number" value="0" min="0" max="2">
+                            </td>
+                            <td>=</td>
+                            <td class="Total"><span id="TotalCon">8</span></td>
+                            <td class="Modifier"><span id="ModifierCon">-1</span></td>
+                            <td><span id="PointcostCon">0</span></td>
+                        </tr>
+                        <tr class="attributeeven">
+                            <td class="text-start">Intelligence</td>
+                            <td>
+                                <input id="PointInt" type="number" value="8" min="7" max="18">
+                            </td>
+                            <td>+</td>
+                            <td>
+                                <input id="RaceInt" type="number" value="0" min="0" max="2">
+                            </td>
+                            <td>=</td>
+                            <td class="Total"><span id="TotalInt">8</span></td>
+                            <td class="Modifier"><span id="ModifierInt">-1</span></td>
+                            <td><span id="PointcostInt">0</span></td>
+                        </tr>
+                        <tr class="attributeodd">
+                            <td class="text-start">Wisdom</td>
+                            <td>
+                                <input id="PointWis" type="number" value="8" min="7" max="18">
+                            </td>
+                            <td>+</td>
+                            <td>
+                                <input id="RaceWis" type="number" value="0" min="0" max="2">
+                            </td>
+                            <td>=</td>
+                            <td class="Total"><span id="TotalWis">8</span></td>
+                            <td class="Modifier"><span id="ModifierWis">-1</span></td>
+                            <td><span id="PointcostWis">0</span></td>
+                        </tr>
+                        <tr class="attributeeven">
+                            <td class="text-start">Charisma</td>
+                            <td>
+                                <input id="PointCha" type="number" value="8" min="7" max="18">
+                            </td>
+                            <td>+</td>
+                            <td>
+                                <input id="RaceCha" type="number" value="0" min="0" max="2">
+                            </td>
+                            <td>=</td>
+                            <td class="Total"><span id="TotalCha">8</span></td>
+                            <td class="Modifier"><span id="ModifierCha">-1</span></td>
+                            <td><span id="PointcostCha">0</span></td>
+                        </tr>
+                    </tbody>
+                    <tf>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="align-middle">
+                            <h5>Total Points</h5>
+                        </td>
+                        <td>
+                            <span class="TotalCost" id="TotalCost">0</span>
+                            /
+                            <span id="AvailablePointsTotal">32</span>
+                        </td>
+                    </tf>
+                </table>
+
+            </div>
+        </section>
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer" style="height: 106.5px;">
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        let params = (new URL(document.location)).searchParams;
+        let DM = params.get('DM');
+        if (DM == 'true') {
+            $('.nav-link:hidden').attr('hidden', false);
+            for (let i = 0; i < $('a[href]').length; i++) {
+                const x = $('a[href]')[i];
+                $(x).attr("href", function(i, href) {
+                    return href + '?DM=true';
+                });
+                console.log( $(x).attr('href') );
+            };
+        };
+    </script>
+
+    <script>
+        var PointCost = [-1, 0, 1, 2, 3, 4, 5, 6, 8, 10, 13, 16];
+        var StrCost = 1;
+        var DexCost = 1;
+        var ConCost = 1;
+        var IntCost = 1;
+        var WisCost = 1;
+        var ChaCost = 1;
+        var TotalCost = 0;
+
+        $('#RaceStr, #PointStr').on('change', function () {
+            var StrStatTotal = parseInt($('#RaceStr').val()) + parseInt($('#PointStr').val())
+            $('#TotalStr').html( StrStatTotal );
+            
+            var StrStatModifier = Math.floor((StrStatTotal - 10)/2);
+            $('#ModifierStr').html( StrStatModifier );
+            if (StrStatModifier >= 0) {
+                $('#ModifierStr').prepend( '+' );
+            };
+
+            StrCost = parseInt($('#PointStr').val()) - 7;
+            $('#PointcostStr').html( PointCost[StrCost] );
+
+            TotalCost = PointCost[StrCost] + PointCost[DexCost] + PointCost[ConCost] + PointCost[IntCost] + PointCost[WisCost] + PointCost[ChaCost];
+            $('#TotalCost').html( TotalCost );
+        });
+
+
+        $('#RaceDex, #PointDex').on('change', function () {
+            var DexStatTotal = parseInt($('#RaceDex').val()) + parseInt($('#PointDex').val())
+            $('#TotalDex').html( DexStatTotal );
+            
+            var DexStatModifier = Math.floor((DexStatTotal - 10)/2);
+            $('#ModifierDex').html( DexStatModifier );
+            if (DexStatModifier >= 0) {
+                $('#ModifierDex').prepend( '+' );
+            };
+
+            DexCost = parseInt($('#PointDex').val()) - 7;
+            $('#PointcostDex').html( PointCost[DexCost] );
+
+            TotalCost = PointCost[StrCost] + PointCost[DexCost] + PointCost[ConCost] + PointCost[IntCost] + PointCost[WisCost] + PointCost[ChaCost];
+            $('#TotalCost').html( TotalCost );
+        });
+
+
+        $('#RaceCon, #PointCon').on('change', function () {
+            var ConStatTotal = parseInt($('#RaceCon').val()) + parseInt($('#PointCon').val())
+            $('#TotalCon').html( ConStatTotal );
+            
+            var ConStatModifier = Math.floor((ConStatTotal - 10)/2);
+            $('#ModifierCon').html( ConStatModifier );
+            if (ConStatModifier >= 0) {
+                $('#ModifierCon').prepend( '+' );
+            };
+
+            ConCost = parseInt($('#PointCon').val()) - 7;
+            $('#PointcostCon').html( PointCost[ConCost] );
+
+            TotalCost = PointCost[StrCost] + PointCost[DexCost] + PointCost[ConCost] + PointCost[IntCost] + PointCost[WisCost] + PointCost[ChaCost];
+            $('#TotalCost').html( TotalCost );
+        });
+
+
+        $('#RaceInt, #PointInt').on('change', function () {
+            var IntStatTotal = parseInt($('#RaceInt').val()) + parseInt($('#PointInt').val())
+            $('#TotalInt').html( IntStatTotal );
+            
+            var IntStatModifier = Math.floor((IntStatTotal - 10)/2);
+            $('#ModifierInt').html( IntStatModifier );
+            if (IntStatModifier >= 0) {
+                $('#ModifierInt').prepend( '+' );
+            };
+
+            IntCost = parseInt($('#PointInt').val()) - 7;
+            $('#PointcostInt').html( PointCost[IntCost] );
+
+            TotalCost = PointCost[StrCost] + PointCost[DexCost] + PointCost[ConCost] + PointCost[IntCost] + PointCost[WisCost] + PointCost[ChaCost];
+            $('#TotalCost').html( TotalCost );
+        });
+
+
+        $('#RaceWis, #PointWis').on('change', function () {
+            var WisStatTotal = parseInt($('#RaceWis').val()) + parseInt($('#PointWis').val())
+            $('#TotalWis').html( WisStatTotal );
+            
+            var WisStatModifier = Math.floor((WisStatTotal - 10)/2);
+            $('#ModifierWis').html( WisStatModifier );
+            if (WisStatModifier >= 0) {
+                $('#ModifierWis').prepend( '+' );
+            };
+
+            WisCost = parseInt($('#PointWis').val()) - 7;
+            $('#PointcostWis').html( PointCost[WisCost] );
+
+            TotalCost = PointCost[StrCost] + PointCost[DexCost] + PointCost[ConCost] + PointCost[IntCost] + PointCost[WisCost] + PointCost[ChaCost];
+            $('#TotalCost').html( TotalCost );
+        });
+
+
+        $('#RaceCha, #PointCha').on('change', function () {
+            var ChaStatTotal = parseInt($('#RaceCha').val()) + parseInt($('#PointCha').val())
+            $('#TotalCha').html( ChaStatTotal );
+            
+            var ChaStatModifier = Math.floor((ChaStatTotal - 10)/2);
+            $('#ModifierCha').html( ChaStatModifier );
+            if (ChaStatModifier >= 0) {
+                $('#ModifierCha').prepend( '+' );
+            };
+
+            ChaCost = parseInt($('#PointCha').val()) - 7;
+            $('#PointcostCha').html( PointCost[ChaCost] );
+
+            TotalCost = PointCost[StrCost] + PointCost[DexCost] + PointCost[ConCost] + PointCost[IntCost] + PointCost[WisCost] + PointCost[ChaCost];
+            $('#TotalCost').html( TotalCost );
+        });
+
+        $('#TotalCost').on('DOMSubtreeModified', function(){
+            if (TotalCost > parseInt( $('#AvailablePointsTotal').text() )) {
+                $(this).parent('td').addClass('text-danger');
+            }
+            else if ( $(this).parent('td').hasClass('text-danger') ) {
+                $(this).parent('td').removeClass('text-danger');
+            };
+        });
+
+    </script>
+
+</body>
+
+</html>
