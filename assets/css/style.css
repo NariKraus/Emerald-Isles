@@ -195,6 +195,12 @@ h1, h2, h3, h4, h5, h6 {
   height: 70px;
 }
 
+@media (max-width: 991px) {
+  #header .logo {
+    font-size: 25px !important;
+  }
+}
+
 #header .logo {
   font-size: 30px;
   margin: 0;
