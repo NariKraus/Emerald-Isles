@@ -47,13 +47,12 @@
                             <li><a class="nav-link" href="states-syran.html">Syran</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a class="nav-link" href="#">Utilities <i class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><span class="nav-link anchor">Utilities <i class="bi bi-chevron-down"></i></span>
                         <ul>
                             <li><a class="nav-link" href="utilities-playable-races.html">Races</a></li>
                             <li><a class="nav-link" href="utilities-pantheon.html">Pantheon</a></li>
                             <div class="break"></div>
                             <li><a class="nav-link" href="utilities-custom-items.html">Items & Materials</a></li>
-                            <li><a class="nav-link" hidden href="utilities-statblocks.html">Stat Blocks</a></li>
                             <li><a class="nav-link" href="utilities-npcs.html">NPCs</a></li>
                             <div class="break"></div>
                             <li class="dropdown"><a class="nav-link" href="utilities-optional-rules.html">Optional Rules <i class="bi bi-chevron-down"></i></a>
@@ -74,6 +73,13 @@
                             <li><a class="nav-link" href="point-buy.html">Point Buy</a></li>
                         </ul>
                     </li>
+					<li class="dropdown"><span hidden class="nav-link anchor">Game Master <i class="bi bi-chevron-down"></i></span>
+						<ul>
+							<li><a class="nav-link" href="dm-plots.html">Plots</a></li>
+							<div class="break"></div>
+                            <li><a class="nav-link" href="dm-statblocks.html">Stat Blocks</a></li>
+						</ul>
+					</li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
@@ -87,7 +93,7 @@
             <div class="container">
 
                 <ol>
-                    <li>Utilities</li>
+                    <li>Game Master</li>
                     <li>Stat Blocks</li>
                 </ol>
                 <h2>Stat Blocks</h2>
@@ -622,7 +628,7 @@
             left += window.screenX;
 
             var state = $('.breadcrumbs ol').children().last().text();
-            var win = window.open("utilities-statblock-info.html?statblock=" + $(this).find('.stat-block-title').text(), 'newwin', 'height = ' + h + 'px , width = ' + w + 'px');
+            var win = window.open("dm-statblock-info.html?statblock=" + $(this).find('.stat-block-title').text(), 'newwin', 'height = ' + h + 'px , width = ' + w + 'px');
             win.moveTo(left, top);
             win.document.close();
         })

@@ -246,7 +246,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 5px;
 }
 
-.navbar a, .navbar a:focus {
+.navbar a, .navbar a:focus, .navbar .anchor, .navbar .anchor:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -257,13 +257,13 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
 }
 
-.navbar a i, .navbar a:focus i {
+.navbar a i, .navbar a:focus i, .navbar .anchor i, .navbar .anchor:focus i {
   font-size: 12px;
   line-height: 0;
   margin-left: 5px;
 }
 
-.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a, .navbar .anchor:hover {
   color: #fff!important;
   background: #cc1616;
 }
