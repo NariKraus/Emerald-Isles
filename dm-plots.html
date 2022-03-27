@@ -102,7 +102,43 @@
 
 		<section data-aos="zoom out" data-aos-duration="250" class="plots">
 			<div class="container">
-				
+				<div class="row">
+					<div class="col-md-6">
+						<ul class="list-group">
+							<li class="list-group-item bg-dark text-light">
+								<div data-bs-toggle="collapse" data-bs-target="#EB-ST" role="button" aria-expanded="false" aria-controls="EB-ST" class="d-flex w-100 justify-content-between">
+									<h5 class="mb-1">Emily Bites - Starter Town</h5>
+									<small class="text-muted date" data-date="Mar 27 2022">3 days ago</small>
+								</div>
+								<div class="collapse" id="EB-ST">
+									<small class="text-muted mb-1">Players start off in a town where all NPCs are secret Lycans except on Girl who is a Vampire.</small>
+								</div>
+							</li>
+							<li class="list-group-item bg-dark text-light">
+								<div data-bs-toggle="collapse" data-bs-target="#AS" role="button" aria-expanded="false" aria-controls="AS" class="d-flex w-100 justify-content-between">
+									<h5 class="mb-1">Asmodeus Sect</h5>
+									<small class="text-muted date" data-date="Mar 27 2022">3 days ago</small>
+								</div>
+								<div class="collapse" id="AS">
+									<small class="text-muted mb-1">Work out some plot to do with the Asmodeus Sect.</small>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<ul class="list-group">
+							<li class="list-group-item bg-dark text-light">
+								<div data-bs-toggle="collapse" data-bs-target="#RIC" role="button" aria-expanded="false" aria-controls="RIC" class="d-flex w-100 justify-content-between">
+									<h5 class="mb-1">Realistic Immortal Character</h5>
+									<small class="text-muted date" data-date="Mar 27 2022">3 days ago</small>
+								</div>
+								<div class="collapse" id="RIC">
+									<small class="text-muted mb-1">A very old, immortal character who constantly suffers due to the strain their infinite life has on their mind.</small>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -140,6 +176,30 @@
                 console.log( $(x).attr('href') );
             };
 		};
+	</script>
+
+	<script>
+		for (let i = 0; i < $('.list-group-item').length; i++) {
+			const element = $('.list-group-item')[i];
+			const date = $(element).find('.date').attr('data-date');
+			const day_start = new Date(date);
+			const day_end = new Date();
+			const total_days = (day_end - day_start) / (1000 * 60 * 60 * 24);
+			const days = Math.round(total_days);
+			if (days == 0) {
+				$(element).find('.date').html('Today')
+			}
+			else if (days == 1) {
+				$(element).find('.date').html('Yesterday')
+			}
+			else if (days >= 365) {
+				$(element).find('.date').html('1 year ago')
+			}
+			else {
+				$(element).find('.date').html(days + ' days ago')
+			}
+		}
+		
 	</script>
 </body>
 
