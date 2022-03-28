@@ -3,7 +3,7 @@ var jsonRaces = (function () {
     $.ajax({
         'async': false,
         'global': false,
-        'url': 'https://raw.githubusercontent.com/NariKraus/Emerald-Isles-Utilities/main/races.json',
+        'url': 'data/races.json',
         'dataType': "json",
         'success': function (data) {
             jsonRaces = data;
@@ -17,7 +17,7 @@ var jsonTerrains = (function () {
     $.ajax({
         'async': false,
         'global': false,
-        'url': 'https://raw.githubusercontent.com/NariKraus/Emerald-Isles-Utilities/main/race%20terrains.json',
+        'url': 'data/race%20terrains.json',
         'dataType': "json",
         'success': function (data) {
             jsonTerrains = data;
