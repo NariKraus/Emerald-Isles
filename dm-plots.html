@@ -104,6 +104,8 @@
             <div class="container">
                 <div class="row">
 
+                    <div id="story">
+                        <div class="title">Story</div>
                         <ul class="list-group p-2 mb-5 col-12">
                             
                             <li class="list-group-item bg-dark text-light">
@@ -167,7 +169,10 @@
                             </li>
 
                         </ul>
+                    </div>
 
+                    <div id="NPCs">
+                        <div class="title">NPCs</div>
                         <ul class="list-group p-2 mb-5">
 
                             <li class="list-group-item bg-dark text-light">
@@ -205,10 +210,34 @@
                                     </div>
                                 </div>
                             </li>
-
+                            
                         </ul>
                     </div>
 
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="row">
+                <div class="mx-auto col-lg-6">
+                    <div class="form">
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <input type="text" name="plot-title" class="form-control" id="plot-title" placeholder="Plot Title" required="">
+                            </div>
+                            <div class="col-md-6 form-group mt-3">
+                                <input type="text" class="form-control" name="plot-subtitle" id="plot-subtitle" placeholder="Plot Subtitle" required="">
+                            </div>
+                            <div class="col-md-6 form-group mt-3">
+                                <input type="text" class="form-control" name="plot-catagory" id="plot-catagory" placeholder="Plot Catagory" required="">
+                            </div>
+                        </div>
+                        <div class="form-group my-3">
+                            <textarea class="form-control" name="plot-description" id="plot-description" rows="5" placeholder="Plot Description" required=""></textarea>
+                        </div>
+                        <div class="text-center"><button class="btn btn-outline-dark text-light" type="submit">Save Plot</button></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -227,7 +256,6 @@
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
     <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
@@ -313,14 +341,50 @@
             else {
                 $(element).find('.date').html('Now');
             }
-
-
-            $(element).find('.plot-title').attr('data-bs-target', '#plot-' + i);
-            $(element).find('.plot-title').attr('aria-controls', 'plot-' + i);
-            $(element).find('.collapse').attr('id', 'plot-' + i);
         };
-        
     </script>
+
+    <script>
+        var setCollapse = function () {
+            for (let i = 0; i < $('.list-group-item').length; i++) {
+                const element = $('.list-group-item')[i];
+                $(element).find('.plot-title').attr('data-bs-target', '#plot-' + i);
+                $(element).find('.plot-title').attr('aria-controls', 'plot-' + i);
+                $(element).find('.collapse').attr('id', 'plot-' + i);
+            };
+        };
+
+        setCollapse()
+    </script>
+
+    <script>
+        months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+        $('.form').on('click', 'button[type=submit]', function () {
+            date = new Date();
+            var $title = $('#plot-title')
+            var $subtitle = $('#plot-subtitle')
+            var $desc = $('#plot-description')
+            var $catagory = $('#plot-catagory')
+
+            var title = $title.val();
+            var subtitle = $subtitle.val();
+            var desc = $desc.val();
+            var catagory = '#' + $catagory.val();
+
+            desc = desc.replace(/\n/g, `</div><div class="text-muted small mb-2">`)
+
+            // console.log(`<li class="list-group-item bg-dark text-light"><div data-bs-toggle="collapse" role="button" aria-expanded="false" class="plot-title"><div class="d-flex w-100 justify-content-between"><h5 class="mb-1">` + title + `</h5><div class="text-muted small date" title="` + months[date.getMonth()], date.getDate(), date.getFullYear() + ', ' + date.getHours() + ':' + date.getMinutes() + `"></div></div><p class="mb-1">` + subtitle + `</p></div><div class="collapse"><div class="text-muted small mb-2">` + desc + `</div></div></li>`);
+
+            var newElement = `<li class="list-group-item bg-dark text-light"><div data-bs-toggle="collapse" role="button" aria-expanded="false" class="plot-title"><div class="d-flex w-100 justify-content-between"><h5 class="mb-1">` + title + `</h5><div class="text-muted small date" title="` + months[date.getMonth()] + ' ' + date.getDate() + ' ' + date.getFullYear() + ', ' + date.getHours() + ':' + date.getMinutes() + `"></div></div><p class="mb-1">` + subtitle + `</p></div><div class="collapse"><div class="text-muted small mb-2">` + desc + `</div></div></li>`
+
+            $(catagory).find('.list-group').append(newElement)
+
+            setCollapse()
+        });
+    </script>
+
+
 </body>
 
 </html>
