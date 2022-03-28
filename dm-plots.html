@@ -277,6 +277,22 @@
     </script>
 
     <script>
+        var jsonPlots = (function () {
+            var jsonPlots = null;
+            $.ajax({
+                'async': false,
+                'global': false,
+                'url': 'https://raw.githubusercontent.com/NariKraus/Emerald-Isles-Utilities/main/plots.json',
+                'dataType': "json",
+                'success': function (data) {
+                    jsonPlots = data;
+                }
+            });
+            return jsonPlots;
+        })();
+    </script>
+
+    <script>
         for (let i = 0; i < $('.list-group-item').length; i++) {
             const element = $('.list-group-item')[i];
 
