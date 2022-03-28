@@ -280,25 +280,25 @@
 
         $('.form').on('click', 'button[type=submit]', function () {
             date = new Date();
-            var $title = $('#plot-title')
-            var $subtitle = $('#plot-subtitle')
-            var $desc = $('#plot-description')
-            var $catagory = $('#plot-catagory')
+            var $title = $('#plot-title');
+            var $subtitle = $('#plot-subtitle');
+            var $desc = $('#plot-description');
+            var $catagory = $('#plot-catagory');
 
             var title = $title.val();
             var subtitle = $subtitle.val();
             var desc = $desc.val();
             var catagory = '#' + $catagory.val();
 
-            desc = desc.replace(/\n/g, `</div><div class="text-muted small mb-2">`)
+            desc = desc.replace(/\n/g, `</div><div class="text-muted small mb-2">`);
 
-            // console.log(`<li class="list-group-item bg-dark text-light"><div data-bs-toggle="collapse" role="button" aria-expanded="false" class="plot-title"><div class="d-flex w-100 justify-content-between"><h5 class="mb-1">` + title + `</h5><div class="text-muted small date" title="` + months[date.getMonth()], date.getDate(), date.getFullYear() + ', ' + date.getHours() + ':' + date.getMinutes() + `"></div></div><p class="mb-1">` + subtitle + `</p></div><div class="collapse"><div class="text-muted small mb-2">` + desc + `</div></div></li>`);
+            var newElement = `<li class="list-group-item bg-dark text-light"><div data-bs-toggle="collapse" role="button" aria-expanded="false" class="plot-title"><div class="d-flex w-100 justify-content-between"><h5 class="mb-1">` + title + `</h5><div class="text-muted small date" title="` + months[date.getMonth()] + ' ' + date.getDate() + ' ' + date.getFullYear() + ', ' + date.getHours() + ':' + date.getMinutes() + `"></div></div><p class="mb-1">` + subtitle + `</p></div><div class="collapse"><div class="text-muted small mb-2">` + desc + `</div></div></li>`;
 
-            var newElement = `<li class="list-group-item bg-dark text-light"><div data-bs-toggle="collapse" role="button" aria-expanded="false" class="plot-title"><div class="d-flex w-100 justify-content-between"><h5 class="mb-1">` + title + `</h5><div class="text-muted small date" title="` + months[date.getMonth()] + ' ' + date.getDate() + ' ' + date.getFullYear() + ', ' + date.getHours() + ':' + date.getMinutes() + `"></div></div><p class="mb-1">` + subtitle + `</p></div><div class="collapse"><div class="text-muted small mb-2">` + desc + `</div></div></li>`
+            $(catagory).find('.list-group').append(newElement);
 
-            $(catagory).find('.list-group').append(newElement)
+            console.log( $(newElement) );
 
-            setCollapse()
+            setCollapse();
         });
     </script>
 
