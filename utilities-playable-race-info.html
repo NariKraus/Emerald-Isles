@@ -81,33 +81,12 @@
     <script src="assets/js/navbar-loader.js"></script>
 
     <script>
-        $.when( $(document).ready(function(){
+        $(document).ready(function(){
             let params = (new URL(document.location)).searchParams;
             let race = params.get('race')
             var target = '#' + race;
 
             $('.row:first').load('assets/html/races.html ' + target)
-
-            for (let i = 0; i < $('.collapse').length; i++) {
-                const x = $('.collapse')[i];
-                $(x).attr('id', 'subrace-' + i).addClass('overflow-hidden');
-            };
-        })).then( function() {
-            for (let i = 0; i < $('h3').length; i++) {
-                const x = $('h3')[i];
-                $(x).addClass('mb-0')
-    
-                $(x).on('click', function () {
-                    for (let j = 0; j < $('h3').length; j++) {
-                        if ( j != i ) {
-                            $('#subrace-' + j).collapse('hide')
-                        }
-                        else {
-                            $('#subrace-' + j).collapse('toggle')
-                        };
-                    };
-                });
-            };
         });
     </script>
 
