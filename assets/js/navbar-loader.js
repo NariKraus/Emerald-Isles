@@ -1,4 +1,4 @@
-$( "#header" ).load( "data/navbar.html", function () {
+$( "#header" ).load( "assets/html/navbar.html", function () {
     let params = (new URL(document.location)).searchParams;
     let DM = params.get('DM');
     if (DM == 'true') {
