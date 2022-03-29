@@ -354,15 +354,17 @@
         let params = (new URL(document.location)).searchParams;
         let DM = params.get('DM');
 
-        for (let i = 0; i < $('.race-line .race-name').length; i++) {
-            const x = $('.race-line .race-name')[i];
-            if (DM == 'true') {
-                $(x).html('<a href="utilities-playable-race-info.html?race=' + $(x).text().toLowerCase() + '&">' + $(x).text() + '</a>');
-            }
-            else {
-                $(x).html('<a href="utilities-playable-race-info.html?race=' + $(x).text().toLowerCase() + '">' + $(x).text() + '</a>');
+        $(document).ready(function() {
+            for (let i = 0; i < $('.race-line .race-name').length; i++) {
+                const x = $('.race-line .race-name')[i];
+                if (DM == 'true') {
+                    $(x).html('<a href="utilities-playable-race-info.html?DM=true&race=' + $(x).text().toLowerCase() + '">' + $(x).text() + '</a>');
+                }
+                else {
+                    $(x).html('<a href="utilities-playable-race-info.html?race=' + $(x).text().toLowerCase() + '">' + $(x).text() + '</a>');
+                };
             };
-        };
+        });
     </script>
 
     <script>
