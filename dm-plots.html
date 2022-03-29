@@ -299,20 +299,29 @@
             setCollapse();
         });
 
+        var downloadJSON = function() {
+            var jsonExport = '{"plots": {"';
 
-        $('#breadcrumbs').find('h2').on('click', function () {
-            console.log( 'Click!' );
-        });
+            jQuery.each(jsonPlots.plots, function(i, val) {
+                const x = '#' + i;
 
-        jQuery.each(jsonPlots.plots, function(i, val) {
+                jsonExport += i + '": ['
+                
+                for (let j = 0; j < $(x).find('.list-group-item').length; j++) {
+                    const element = $(x).find('.list-group-item')[j];
+                    jsonExport += '{"' + j + '": "' + $(element).html().replace(/"/g, `'`) + '"},';
+                };
+                jsonExport = jsonExport.slice(0,-1);
+                jsonExport += '], "';
+            });
 
-            const x = '#' + i;
+            jsonExport = jsonExport.slice(0,-3);
+            jsonExport += '}}'
+            console.log(jsonExport);
+        };
 
-            for (let i = 0; i < val.length; i++) {
-                // $(x).find('.list-group-item').append(val[i][i]);
-            };
+        $('#breadcrumbs').find('h2').on('click', downloadJSON());
 
-        });
     </script>
 
 </body>
