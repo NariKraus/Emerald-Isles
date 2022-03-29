@@ -54,13 +54,6 @@
                     
 
                 </div>
-                <script>
-                    let params = (new URL(document.location)).searchParams;
-                    let race = params.get('race')
-                    var target = '#' + race;
-
-                    $('.row:first').load('assets/html/races.html ' + target)
-                </script>
             </div>
         </section>
 
@@ -87,10 +80,14 @@
 
     <script src="assets/js/navbar-loader.js"></script>
 
-    <!-- Card Details -->
-
     <script>
         $(document).ready(function(){
+            let params = (new URL(document.location)).searchParams;
+            let race = params.get('race')
+            var target = '#' + race;
+
+            $('.row:first').load('assets/html/races.html ' + target)
+
             for (let i = 0; i < $('.collapse').length; i++) {
                 const x = $('.collapse')[i];
                 $(x).attr('id', 'subrace-' + i).addClass('overflow-hidden');
