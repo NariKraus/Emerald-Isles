@@ -2,30 +2,30 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-	<title>Emerald Isles - 404</title>
-	<meta content="" name="description">
-	<meta content="" name="keywords">
+    <title>Emerald Isles - 404</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
-	<!-- Favicons -->
-	<link href="assets/img/favicon.png" rel="icon">
-	<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-	<!-- Vendor CSS Files -->
-	<link href="assets/vendor/aos/aos.css" rel="stylesheet">
-	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-	<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-	<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-	<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-	<!-- Main CSS File -->
-	<link href="assets/css/style.css" rel="stylesheet">
+    <!-- Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
 
-	<!-- States CSS File -->
-	<link href="assets/css/states.css" rel="stylesheet">
+    <!-- States CSS File -->
+    <link href="assets/css/states.css" rel="stylesheet">
 
 </head>
 
@@ -35,63 +35,63 @@
     <header id="header" class="d-flex align-items-center">
     </header><!-- End Header -->
 
-	<main id="main">
+    <main id="main">
 
-		<!-- ======= Breadcrumbs ======= -->
-		<section id="breadcrumbs" class="breadcrumbs">
-			<div class="container">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
 
-				<ol>
-					<li>404</li>
-				</ol>
-				<h2>404</h2>
+                <ol>
+                    <li>404</li>
+                </ol>
+                <h2>404</h2>
 
-			</div>
-		</section><!-- End Breadcrumbs -->
+            </div>
+        </section><!-- End Breadcrumbs -->
 
-		<section data-aos="zoom out" data-aos-duration="250" class="inner-page">
-			<div class="container">
-				<h1>Page Not Found</h1>
-				<p>Sorry, that page was not located within our database.</p>
-			</div>
-		</section>
+        <section data-aos="zoom out" data-aos-duration="250" class="inner-page">
+            <div class="container">
+                <h1>Page Not Found</h1>
+                <p>Sorry, that page was not located within our database.</p>
+            </div>
+        </section>
 
-	</main><!-- End #main -->
+    </main><!-- End #main -->
 
-	<!-- ======= Footer ======= -->
-	<footer id="footer" class="footer" style="height: 106.5px;">
-	</footer><!-- End Footer -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer" style="height: 106.5px;">
+    </footer><!-- End Footer -->
 
-	<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-	<div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
 
-	<!-- Vendor JS Files -->
-	<script src="assets/vendor/aos/aos.js"></script>
-	<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-	<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-	<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-	<script src="assets/vendor/jquery/jquery.min.js"></script>
-	<script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
-	<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
 
-	<!-- Main JS File -->
-	<script src="assets/js/main.js"></script>
-	<script>
-		let params = (new URL(document.location)).searchParams;
-		let DM = params.get('DM');
-		if (DM == 'true') {
-			$('.nav-link:hidden').attr('hidden', false);
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        $( "#header" ).load( "data/navbar.html" );
+
+        let params = (new URL(document.location)).searchParams;
+        let DM = params.get('DM');
+        if (DM == 'true') {
+            $('.nav-link:hidden').attr('hidden', false);
             for (let i = 0; i < $('a[href]').length; i++) {
                 const x = $('a[href]')[i];
                 $(x).attr("href", function(i, href) {
                     return href + '?DM=true';
                 });
             };
-		};
-
-		$( "#header" ).load( "data/navbar.html" );
-	</script>
+        };
+    </script>
 </body>
 
 </html>
