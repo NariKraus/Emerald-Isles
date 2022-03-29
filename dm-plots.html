@@ -307,7 +307,8 @@
             var jsonExport = '{"plots": {"';
 
             for (let i = 0; i < $('.row:first').children().length; i++) {
-                const x = '#' + $('.row:first').children()[i].attr('id');
+                const y = $('.row:first').children()[i];
+                const x = '#' + $(x).attr('id');
 
                 jsonExport += i + '": ['
                 
