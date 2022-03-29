@@ -294,7 +294,7 @@
 
             if ( $(catagory).length == 0 ) {
                 $('div.row:first').append('<div id="' + catagory + '"></div>');
-                const x = '#' + i;
+                const x = '#' + catagory;
                 $(x).append('<div class="title">' + catagory.toUpperCase() + '</div>');
                 $(x).append('<ul class="list-group p-2 mb-5"></ul>');  
             };
