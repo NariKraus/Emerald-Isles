@@ -152,6 +152,7 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+
     <script>
         let params = (new URL(document.location)).searchParams;
         let DM = params.get('DM');
@@ -164,9 +165,8 @@
                 });
             };
         };
-    </script>
+        
 
-    <script>
         var jsonPlots = (function () {
             var jsonPlots = null;
             $.ajax({
@@ -183,9 +183,9 @@
 
         jQuery.each(jsonPlots.plots, function(i, val) {
 
-            $('div.row:first').append('<div id="' + i.toLowerCase() + '"></div>');
+            $('div.row:first').append('<div id="' + i + '"></div>');
             const x = '#' + i.toLowerCase();
-            $(x).append('<div class="title">' + i + '</div>');
+            $(x).append('<div class="title">' + i.toUpperCase() + '</div>');
             $(x).append('<ul class="list-group p-2 mb-5"></ul>');
 
             for (let i = 0; i < val.length; i++) {
@@ -260,9 +260,8 @@
                 $(element).find('.date').html('Now');
             }
         };
-    </script>
+        
 
-    <script>
         var setCollapse = function () {
             for (let i = 0; i < $('.list-group-item').length; i++) {
                 const element = $('.list-group-item')[i];
@@ -273,9 +272,8 @@
         };
 
         setCollapse()
-    </script>
 
-    <script>
+
         months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
         $('.form').on('click', 'button[type=submit]', function () {
@@ -299,6 +297,21 @@
             console.log( newElement );
 
             setCollapse();
+        });
+
+
+        $('#breadcrumbs').find('h2').on('click', function () {
+            console.log( 'Click!' );
+        });
+
+        jQuery.each(jsonPlots.plots, function(i, val) {
+
+            const x = '#' + i;
+
+            for (let i = 0; i < val.length; i++) {
+                $(x).find('.list-group-item').append(val[i][i]);
+            };
+
         });
     </script>
 

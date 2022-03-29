@@ -1,6 +1,6 @@
 {
     "plots": {
-        "Story": [
+        "story": [
             {
                 "0": "<li class='list-group-item bg-dark text-light'><div data-bs-toggle='collapse' role='button' aria-expanded='false' class='plot-title'><div class='d-flex w-100 justify-content-between'><h5 class='mb-1'>Emily Bites</h5><div class='text-muted small date' title='March 27 2022, 00:21'></div></div><p class='mb-1'>Players start off in a town where all NPCs are secret Lycans except on Girl who is a Vampire.</p></div><div class='collapse'><div class='text-muted border-top border-2 small mb-2'><div class='title my-3 text-center'>Chanting</div><p class='mb-0 text-center'>She looks rosy, she looks rosy.</p><p class='mb-0 text-center'>She looks happy, she looks happy.</p><p class='mb-0 text-center'>She looks dreamy, she looks dreamy.</p><p class='mb-0 text-center'>She looks pale, she looks pale.</p><p class='mb-0 text-center'>She looks weary, she looks weary.</p><p class='mb-0 text-center'>She looks dying, she looks dying.</p><p class='mb-0 text-center'>She looks dead, she looks dead.</p></div></div></li>"
             },
@@ -11,7 +11,7 @@
                 "2": "<li class='list-group-item bg-dark text-light'><div data-bs-toggle='collapse' role='button' aria-expanded='false' class='plot-title'><div class='d-flex w-100 justify-content-between'><h5 class='mb-1'>The Lost 8th Nation</h5><div class='text-muted small date' title='March 28 2022, 00:07'></div></div><p class='mb-1'>Investigating the loss of the 8th nation and it's mythos.</p></div><div class='collapse'><div class='text-muted border-top border-2 small mb-2'><div class='title my-3 text-center'>The rise and fall of the Emerald Empire</div></div></div></li>"
             }
         ],
-        "NPCs": [
+        "npcs": [
             {
                 "0": "<li class='list-group-item bg-dark text-light'><div data-bs-toggle='collapse' role='button' aria-expanded='false' class='plot-title'><div class='d-flex w-100 justify-content-between'><h5 class='mb-1'>The Infinite Eternity</h5><div class='text-muted small date' title='March 27 2022, 00:27'></div></div><p class='mb-1'>A realistic immortal character.</p></div><div class='collapse'><p class='text-muted small mb-1'>A nameless man laments by himself in a corner of the tavern, seemingly invisible to the rest of the world.</p><p class='text-muted small mb-1'>The man is dressed in long flowing robes and rags, covering the majority of his boy.</p><p class='text-muted small mb-1'>After a short conversation, the players discover that the man's left hand is constructed out of maritime quartz.</p><p class='text-muted small mb-1'>His memories are few and far between, tending upon key events and important memories, though his knowledge of the world is unquestionable.</p><p class='text-muted small mb-1'>The man states that after having replaced their old hand, they were cursed with both immortality and indestructability. He can not be slain, poisoned or destroyed.</p><p class='text-muted small mb-1'>The man has seen empires rise and fall, and was one of those who caused the destruction of the 8th nation, dropping it below the sea.</p></div></li>"
             },
