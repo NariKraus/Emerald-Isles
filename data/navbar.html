@@ -51,3 +51,11 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
     </nav>
 </div>
+<script>
+    var elements = $('.breadcrumbs > div > ol > li');
+    var elementArray = Array.from(elements);
+
+    for (let i = 0; i < elementArray.length; i++) {
+        $(`.nav-link:contains("` + $(elementArray[i]).text() + `")`).addClass('active');
+    };
+</script>
