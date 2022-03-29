@@ -351,6 +351,9 @@
     </script>
 
     <script>
+        let params = (new URL(document.location)).searchParams;
+        let DM = params.get('DM');
+
         for (let i = 0; i < $('.race-line .race-name').length; i++) {
             const x = $('.race-line .race-name')[i];
             if (DM == 'true') {
