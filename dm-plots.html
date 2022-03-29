@@ -293,15 +293,12 @@
             var newElement = `<li class="list-group-item bg-dark text-light"><div data-bs-toggle="collapse" role="button" aria-expanded="false" class="plot-title"><div class="d-flex w-100 justify-content-between"><h5 class="mb-1">` + title + `</h5><div class="text-muted small date" title="` + months[date.getMonth()] + ' ' + date.getDate() + ' ' + date.getFullYear() + ', ' + date.getHours() + ':' + date.getMinutes() + `"></div></div><p class="mb-1">` + subtitle + `</p></div><div class="collapse"><div class="text-muted small mb-2">` + desc + `</div></div></li>`;
 
             if ( $(catagory).length == 0 ) {
-                $('div.row:first').append('<div id="' + catagory + '"></div>');
-                const x = '#' + catagory;
-                $(x).append('<div class="title">' + catagory.toUpperCase() + '</div>');
-                $(x).append('<ul class="list-group p-2 mb-5"></ul>');  
+                $('div.row:first').append('<div id="' + $catagory + '"></div>');
+                $(catagory).append('<div class="title">' + $catagory.toUpperCase() + '</div>');
+                $(catagory).append('<ul class="list-group p-2 mb-5"></ul>');  
             };
 
             $(catagory).find('.list-group').append(newElement);
-
-            console.log( newElement );
 
             setCollapse();
         });
