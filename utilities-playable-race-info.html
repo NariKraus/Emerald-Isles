@@ -81,7 +81,7 @@
     <script src="assets/js/navbar-loader.js"></script>
 
     <script>
-        $(document).ready(function(){
+        $.when( $(document).ready(function(){
             let params = (new URL(document.location)).searchParams;
             let race = params.get('race')
             var target = '#' + race;
@@ -92,7 +92,7 @@
                 const x = $('.collapse')[i];
                 $(x).attr('id', 'subrace-' + i).addClass('overflow-hidden');
             };
-    
+        })).then( function() {
             for (let i = 0; i < $('h3').length; i++) {
                 const x = $('h3')[i];
                 $(x).addClass('mb-0')
