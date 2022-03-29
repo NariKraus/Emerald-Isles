@@ -1,16 +1,5 @@
 (function() {
     "use strict";
-  
-    /**
-     * Navbar active toggle
-     */
-    var elements = $('.breadcrumbs > div > ol > li');
-    var elementArray = Array.from(elements);
-
-    for (let i = 0; i < elementArray.length; i++) {
-        $(`.nav-link:contains("` + $(elementArray[i]).text() + `")`).addClass('active')
-
-    };
 
     /**
      * Easy selector helper function
