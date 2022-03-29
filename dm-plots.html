@@ -196,72 +196,6 @@
     </script>
 
     <script>
-        for (let i = 0; i < $('.list-group-item').length; i++) {
-            const element = $('.list-group-item')[i];
-
-            const date = $(element).find('.date').attr('title');
-            const day_start = new Date(date);
-            const day_end = new Date();
-
-            // get total seconds between the times
-            var delta = Math.abs(day_end - day_start) / 1000;
-
-            // calculate (and subtract) whole days
-            const years = Math.floor(delta / 31536000);
-            delta -= years * 31536000;
-
-            // calculate (and subtract) whole days
-            const months = Math.floor(delta / 2592000);
-            delta -= months * 2592000;
-
-            // calculate (and subtract) whole days
-            const days = Math.floor(delta / 86400);
-            delta -= days * 86400;
-
-            // calculate (and subtract) whole hours
-            const hours = Math.floor(delta / 3600) % 24;
-            delta -= hours * 3600;
-
-            // calculate (and subtract) whole minutes
-            const minutes = Math.floor(delta / 60) % 60;
-            delta -= minutes * 60;
-
-            if (years > 1) {
-                $(element).find('.date').html(years + ' years ago');
-            }
-            else if (years == 1) {
-                $(element).find('.date').html('1 year ago');
-            }
-            else if (months > 1) {
-                $(element).find('.date').html(months + ' months ago');
-            }
-            else if (months == 1) {
-                $(element).find('.date').html('1 month ago');
-            }
-            else if (days > 1) {
-                $(element).find('.date').html(days + ' days ago');
-            }
-            else if (days == 1) {
-                $(element).find('.date').html('1 day ago');
-            }
-            else if (hours > 1) {
-                $(element).find('.date').html(hours + ' hours ago');
-            }
-            else if (hours == 1) {
-                $(element).find('.date').html('1 hour ago');
-            }
-            else if (minutes > 1) {
-                $(element).find('.date').html(minutes + ' minutes ago');
-            }
-            else if (minutes == 1) {
-                $(element).find('.date').html('1 minute ago');
-            }
-            else {
-                $(element).find('.date').html('Now');
-            }
-        };
-        
-
         var setCollapse = function () {
             for (let i = 0; i < $('.list-group-item').length; i++) {
                 const element = $('.list-group-item')[i];
@@ -269,9 +203,75 @@
                 $(element).find('.plot-title').attr('aria-controls', 'plot-' + i);
                 $(element).find('.collapse').attr('id', 'plot-' + i);
             };
+
+            for (let i = 0; i < $('.list-group-item').length; i++) {
+                const element = $('.list-group-item')[i];
+
+                const date = $(element).find('.date').attr('title');
+                const day_start = new Date(date);
+                const day_end = new Date();
+
+                // get total seconds between the times
+                var delta = Math.abs(day_end - day_start) / 1000;
+
+                // calculate (and subtract) whole days
+                const years = Math.floor(delta / 31536000);
+                delta -= years * 31536000;
+
+                // calculate (and subtract) whole days
+                const months = Math.floor(delta / 2592000);
+                delta -= months * 2592000;
+
+                // calculate (and subtract) whole days
+                const days = Math.floor(delta / 86400);
+                delta -= days * 86400;
+
+                // calculate (and subtract) whole hours
+                const hours = Math.floor(delta / 3600) % 24;
+                delta -= hours * 3600;
+
+                // calculate (and subtract) whole minutes
+                const minutes = Math.floor(delta / 60) % 60;
+                delta -= minutes * 60;
+
+                if (years > 1) {
+                    $(element).find('.date').html(years + ' years ago');
+                }
+                else if (years == 1) {
+                    $(element).find('.date').html('1 year ago');
+                }
+                else if (months > 1) {
+                    $(element).find('.date').html(months + ' months ago');
+                }
+                else if (months == 1) {
+                    $(element).find('.date').html('1 month ago');
+                }
+                else if (days > 1) {
+                    $(element).find('.date').html(days + ' days ago');
+                }
+                else if (days == 1) {
+                    $(element).find('.date').html('1 day ago');
+                }
+                else if (hours > 1) {
+                    $(element).find('.date').html(hours + ' hours ago');
+                }
+                else if (hours == 1) {
+                    $(element).find('.date').html('1 hour ago');
+                }
+                else if (minutes > 1) {
+                    $(element).find('.date').html(minutes + ' minutes ago');
+                }
+                else if (minutes == 1) {
+                    $(element).find('.date').html('1 minute ago');
+                }
+                else {
+                    $(element).find('.date').html('Now');
+                }
+            };
         };
 
         setCollapse()
+
 
 
         months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -302,6 +302,8 @@
 
             setCollapse();
         });
+
+
 
         $('#breadcrumbs').find('h2').on('click', function() {
             var jsonExport = '{"plots": {"';
