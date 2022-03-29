@@ -299,7 +299,7 @@
             setCollapse();
         });
 
-        var downloadJSON = function() {
+        $('#breadcrumbs').find('h2').on('click', function() {
             var jsonExport = '{"plots": {"';
 
             jQuery.each(jsonPlots.plots, function(i, val) {
@@ -316,11 +316,16 @@
             });
 
             jsonExport = jsonExport.slice(0,-3);
-            jsonExport += '}}'
-            console.log(jsonExport);
-        };
+            jsonExport += '}}';
 
-        $('#breadcrumbs').find('h2').on('click', downloadJSON());
+            var filename = 'plots.json';
+            var blobExport = new Blob([jsonExport], {
+                type: "text/plain;charset=utf-8"
+            });
+
+            var link = window.URL.createObjectURL(blobExport);
+            window.location = link;
+        });
 
     </script>
 
