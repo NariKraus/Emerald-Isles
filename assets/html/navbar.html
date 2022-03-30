@@ -63,19 +63,19 @@
      * Mobile nav toggle
      */
     $('.mobile-nav-toggle').on('click', function(e) {
-        console.log('click!')
-        select('#navbar').classList.toggle('navbar-mobile')
-        this.classList.toggle('bi-list')
-        this.classList.toggle('bi-x')
+        console.log('click!');
+        $('#navbar').toggleClass('navbar-mobile');
+        $(this).toggleClass('bi-list');
+        $(this).toggleClass('bi-x');
     })
   
     /**
      * Mobile nav dropdowns activate
      */
     $('.navbar .dropdown > a').on('click', function(e) {
-        if (select('#navbar').classList.contains('navbar-mobile')) {
-            e.preventDefault()
-            this.nextElementSibling.classList.toggle('dropdown-active')
-        }
-    }, true)
+        if ($('#navbar').hasClass('navbar-mobile')) {
+            e.preventDefault();
+            $(this).next().toggleClass('dropdown-active');
+        };
+    });
 </script>
