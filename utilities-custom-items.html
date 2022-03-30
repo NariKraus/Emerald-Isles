@@ -134,6 +134,9 @@
     <script src="assets/js/navbar-loader.js"></script>
 
     <script>
+        let params = (new URL(document.location)).searchParams;
+        let DM = params.get('DM');
+
         for (let i = 0; i < $('.item-material .item-material-title').length; i++) {
             const x = $('.item-material .item-material-title')[i];
             if (DM == 'true') {
