@@ -103,6 +103,7 @@
     </script>
 
     <script>
+        let params = (new URL(document.location)).searchParams;
         let item = params.get('item');
         for (let k = 0; k < jsonItems.items.length; k++) {
             const x = jsonItems.items[k];

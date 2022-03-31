@@ -103,6 +103,7 @@
     </script>
 
     <script>
+        let params = (new URL(document.location)).searchParams;
         let statblock = params.get('statblock');
         $statblock = "";
         var i = -1;
