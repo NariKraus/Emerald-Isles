@@ -223,7 +223,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .scrolled-offset {
   margin-top: 70px;
-  min-height: calc(100% - 106.5px);
+  min-height: calc(100% - 70px);
 }
 
 /*--------------------------------------------------------------
@@ -696,6 +696,7 @@ section {
 --------------------------------------------------------------*/
 #footer {
   background-image: url('../img/header-bg.png');
+  height: 70px;
   padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
