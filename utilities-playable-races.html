@@ -318,24 +318,6 @@
 
     <script src="assets/js/navbar-loader.js"></script>
 
-    <!-- Card Details -->
-
-    <script>
-        var jsonTerrains = (function () {
-            var jsonTerrains = null;
-            $.ajax({
-                'async': false,
-                'global': false,
-                'url': 'data/race terrains.json',
-                'dataType': "json",
-                'success': function (data) {
-                    jsonTerrains = data;
-                }
-            });
-            return jsonTerrains;
-        })();
-    </script>
-
     <script>
         let params = (new URL(document.location)).searchParams;
         let DM = params.get('DM');
@@ -354,6 +336,20 @@
     </script>
 
     <script>
+        var jsonTerrains = (function () {
+            var jsonTerrains = null;
+            $.ajax({
+                'async': false,
+                'global': false,
+                'url': 'data/race terrains.json',
+                'dataType': "json",
+                'success': function (data) {
+                    jsonTerrains = data;
+                }
+            });
+            return jsonTerrains;
+        })();
+        
         $.fn.dataTable.ext.search.push(
             function( settings, data, dataIndex ) {
 
