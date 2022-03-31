@@ -316,13 +316,13 @@
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
 
-    <script src="assets/js/navbar-loader.js"></script>
+    <script src="assets/js/navbar-loader.js" onload="addDMLink();"></script>
 
     <script>
         let params = (new URL(document.location)).searchParams;
         let DM = params.get('DM');
 
-        $(document).ready(function() {
+        var addDMLink = new function() {
             for (let i = 0; i < $('.race-line .race-name').length; i++) {
                 const x = $('.race-line .race-name')[i];
                 if (DM == 'true') {
@@ -332,7 +332,7 @@
                     $(x).html('<a href="utilities-playable-race-info.html?race=' + $(x).text().toLowerCase() + '">' + $(x).text() + '</a>');
                 };
             };
-        });
+        };
     </script>
 
     <script>
