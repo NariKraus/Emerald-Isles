@@ -85,6 +85,7 @@
             let params = (new URL(document.location)).searchParams;
             let race = params.get('race')
             var target = '#' + race;
+            target = target.replace(' ', '-')
 
             $('.row:first').load('assets/html/races.html ' + target)
         });
