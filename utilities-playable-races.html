@@ -322,7 +322,7 @@
         let params = (new URL(document.location)).searchParams;
         let DM = params.get('DM');
 
-        var addDMLink = new function() {
+        function addDMLink() {
             for (let i = 0; i < $('.race-line .race-name').length; i++) {
                 const x = $('.race-line .race-name')[i];
                 if (DM == 'true') {
