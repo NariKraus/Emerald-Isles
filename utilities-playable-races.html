@@ -316,8 +316,6 @@
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
 
-    <script src="assets/js/navbar-loader.js" onload="addDMLink();"></script>
-
     <script>
         let params = (new URL(document.location)).searchParams;
         let DM = params.get('DM');
@@ -334,6 +332,8 @@
             };
         };
     </script>
+
+    <script src="assets/js/navbar-loader.js" onload="addDMLink();"></script>
 
     <script>
         var jsonTerrains = (function () {
