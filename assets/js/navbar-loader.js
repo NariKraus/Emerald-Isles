@@ -4,7 +4,7 @@ $( "#header" ).load( "assets/html/navbar.html", function () {
     if (DM == 'true') {
         $('.nav-link:hidden').attr('hidden', false);
         for (let i = 0; i < $('a[href]').length; i++) {
-            const x = $('a[href]')[i];
+            const x = $('a.nav-link[href]')[i];
             $(x).attr("href", function(i, href) {
                 return href + '?DM=true';
             });
