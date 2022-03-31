@@ -226,7 +226,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gradient-border {
-  --borderWidth: 3px;
+  --borderWidth: 5px;
   background: #1D1F20;
   position: relative;
   border-radius: var(--borderWidth);
