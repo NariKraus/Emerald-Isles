@@ -117,6 +117,9 @@
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
     <div id="preloader"></div>
 
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+
     <!-- Vendor JS Files -->
     <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -128,24 +131,27 @@
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
 
+    <script src="assets/js/navbar-loader.js"></script>
+
     <script>
         let params = (new URL(document.location)).searchParams;
         let DM = params.get('DM');
 
-        function addDMLink() {
+        $(document).ready(function() {
             for (let i = 0; i < $('.item-material .item-material-title').length; i++) {
                 const x = $('.item-material .item-material-title')[i];
                 if (DM == 'true') {
-                    $(x).html('<a href="utilities-custom-items-info.html?DM=true&item=' + $(x).text().toLowerCase() + '">' + $(x).text() + '</a>');
+                    $(x).html('<a href="utilities-custom-items-info.html">' + $(x).text() + '</a>');
+                    $(x).attr("href", function(i, href) {
+                        return href + '&item=' + $(x).text().toLowerCase();
+                    });
                 }
                 else {
                     $(x).html('<a href="utilities-custom-items-info.html?item=' + $(x).text().toLowerCase() + '">' + $(x).text() + '</a>');
                 };
             };
-        };
+        })
     </script>
-
-    <script src="assets/js/navbar-loader.js" onload="addDMLink();"></script>
 
     <script>
         $(document).ready(function () {
