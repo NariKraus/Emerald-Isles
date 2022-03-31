@@ -321,20 +321,6 @@
     <!-- Card Details -->
 
     <script>
-        var jsonRaces = (function () {
-            var jsonRaces = null;
-            $.ajax({
-                'async': false,
-                'global': false,
-                'url': 'data/races.json',
-                'dataType': "json",
-                'success': function (data) {
-                    jsonRaces = data;
-                }
-            });
-            return jsonRaces;
-        })();
-
         var jsonTerrains = (function () {
             var jsonTerrains = null;
             $.ajax({
