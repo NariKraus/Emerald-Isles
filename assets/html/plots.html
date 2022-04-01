@@ -1,12 +1,11 @@
+<input id="placeholder" hidden></input>
+
 <script>
     function copyToClipboard(element) {
-        var $temp = $("<input>");
-        $("body").append($temp);
         const selected = '#' + element;
         console.log(selected)
-        $temp.val($(selected).prop('outerHTML')).select();
+        $('#placeholder').val($(selected).prop('outerHTML')).select();
         document.execCommand("copy");
-        $temp.remove();
     };
 </script>
 
