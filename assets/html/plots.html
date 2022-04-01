@@ -3,6 +3,7 @@
         var $temp = $("<input>");
         $("body").append($temp);
         const selected = '#' + element;
+        console.log(selected)
         $temp.val($(selected).prop('outerHTML')).select();
         document.execCommand("copy");
         $temp.remove();
