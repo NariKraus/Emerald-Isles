@@ -218,7 +218,14 @@
             $('#breadcrumbs').find('h2').on('click', function() {
                 let selectedPlot = prompt("Please enter a plot title", "");
                 if (selectedPlot != null && selectedPlot != "") {
-                    copyToClipboard( selectedPlot )
+                    selectedPlot = selectedPlot.toLowerCase().replace(/ /g, '-');
+                    const $temp = $("<input>");
+                    $("body").append($temp);
+                    const selected = '#' + selectedPlot;
+                    console.log(selected)
+                    $temp.val($(selected).prop('outerHTML')).select();
+                    document.execCommand("copy");
+                    $temp.remove();
                 }
             });
         });
