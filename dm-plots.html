@@ -103,122 +103,125 @@
     <script src="assets/js/navbar-loader.js"></script>
 
     <script>
-        var setCollapse = function () {
-            for (let i = 0; i < $('.list-group-item').length; i++) {
-                const element = $('.list-group-item')[i];
-                $(element).find('.plot-title').attr('data-bs-target', '#plot-' + i);
-                $(element).find('.plot-title').attr('aria-controls', 'plot-' + i);
-                $(element).find('.collapse').attr('id', 'plot-' + i);
+        $('.row:first').load('assets/html/plots.html');
+
+        $(document).ready(function() {
+            var setCollapse = function () {
+                for (let i = 0; i < $('.list-group-item').length; i++) {
+                    const element = $('.list-group-item')[i];
+                    $(element).find('.plot-title').attr('data-bs-target', '#plot-' + i);
+                    $(element).find('.plot-title').attr('aria-controls', 'plot-' + i);
+                    $(element).find('.collapse').attr('id', 'plot-' + i);
+                };
+    
+                for (let i = 0; i < $('.list-group-item').length; i++) {
+                    const element = $('.list-group-item')[i];
+    
+                    const date = $(element).find('.date').attr('title');
+                    const day_start = new Date(date);
+                    const day_end = new Date();
+    
+                    // get total seconds between the times
+                    var delta = Math.abs(day_end - day_start) / 1000;
+    
+                    // calculate (and subtract) whole days
+                    const years = Math.floor(delta / 31536000);
+                    delta -= years * 31536000;
+    
+                    // calculate (and subtract) whole days
+                    const months = Math.floor(delta / 2592000);
+                    delta -= months * 2592000;
+    
+                    // calculate (and subtract) whole days
+                    const days = Math.floor(delta / 86400);
+                    delta -= days * 86400;
+    
+                    // calculate (and subtract) whole hours
+                    const hours = Math.floor(delta / 3600) % 24;
+                    delta -= hours * 3600;
+    
+                    // calculate (and subtract) whole minutes
+                    const minutes = Math.floor(delta / 60) % 60;
+                    delta -= minutes * 60;
+    
+                    if (years > 1) {
+                        $(element).find('.date').html(years + ' years ago');
+                    }
+                    else if (years == 1) {
+                        $(element).find('.date').html('1 year ago');
+                    }
+                    else if (months > 1) {
+                        $(element).find('.date').html(months + ' months ago');
+                    }
+                    else if (months == 1) {
+                        $(element).find('.date').html('1 month ago');
+                    }
+                    else if (days > 1) {
+                        $(element).find('.date').html(days + ' days ago');
+                    }
+                    else if (days == 1) {
+                        $(element).find('.date').html('1 day ago');
+                    }
+                    else if (hours > 1) {
+                        $(element).find('.date').html(hours + ' hours ago');
+                    }
+                    else if (hours == 1) {
+                        $(element).find('.date').html('1 hour ago');
+                    }
+                    else if (minutes > 1) {
+                        $(element).find('.date').html(minutes + ' minutes ago');
+                    }
+                    else if (minutes == 1) {
+                        $(element).find('.date').html('1 minute ago');
+                    }
+                    else {
+                        $(element).find('.date').html('Now');
+                    }
+                };
             };
-
-            for (let i = 0; i < $('.list-group-item').length; i++) {
-                const element = $('.list-group-item')[i];
-
-                const date = $(element).find('.date').attr('title');
-                const day_start = new Date(date);
-                const day_end = new Date();
-
-                // get total seconds between the times
-                var delta = Math.abs(day_end - day_start) / 1000;
-
-                // calculate (and subtract) whole days
-                const years = Math.floor(delta / 31536000);
-                delta -= years * 31536000;
-
-                // calculate (and subtract) whole days
-                const months = Math.floor(delta / 2592000);
-                delta -= months * 2592000;
-
-                // calculate (and subtract) whole days
-                const days = Math.floor(delta / 86400);
-                delta -= days * 86400;
-
-                // calculate (and subtract) whole hours
-                const hours = Math.floor(delta / 3600) % 24;
-                delta -= hours * 3600;
-
-                // calculate (and subtract) whole minutes
-                const minutes = Math.floor(delta / 60) % 60;
-                delta -= minutes * 60;
-
-                if (years > 1) {
-                    $(element).find('.date').html(years + ' years ago');
+    
+            setCollapse()
+    
+    
+    
+            months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    
+            $('.form').on('click', 'button[type=submit]', function () {
+                date = new Date();
+                var $title = $('#plot-title');
+                var $subtitle = $('#plot-subtitle');
+                var $desc = $('#plot-description');
+                var $catagory = $('#plot-catagory');
+    
+                var title = $title.val();
+                var subtitle = $subtitle.val();
+                var desc = $desc.val();
+                var catagory = '#' + $catagory.val();
+    
+                desc = desc.replace(/\n/g, `</div><div class="text-muted small mb-2">`);
+    
+                var newElement = `<li id="` + title.toLowerCase().replace(' ', '-') + `" class="list-group-item bg-dark text-light"><div data-bs-toggle="collapse" role="button" aria-expanded="false" class="plot-title"><div class="d-flex w-100 justify-content-between"><h5 class="mb-1">` + title + `</h5><div class="text-muted small date" title="` + months[date.getMonth()] + ' ' + date.getDate() + ' ' + date.getFullYear() + ', ' + date.getHours() + ':' + date.getMinutes() + `"></div></div><p class="mb-1">` + subtitle + `</p></div><div class="collapse"><div class="text-muted small mb-2">` + desc + `</div></div></li>`;
+    
+                if ( $(catagory).length == 0 ) {
+                    $('div.row:first').append('<div id="' + catagory.substring(1) + '"></div>');
+                    $(catagory).append('<div class="title">' + catagory.substring(1).toUpperCase() + '</div>');
+                    $(catagory).append('<ul class="list-group p-2 mb-5"></ul>');  
+                };
+    
+                $(catagory).find('.list-group').append(newElement);
+    
+                setCollapse();
+            });
+    
+    
+    
+            $('#breadcrumbs').find('h2').on('click', function() {
+                let selectedPlot = prompt("Please enter a plot title", "");
+                if (selectedPlot != null && selectedPlot != "") {
+                    copyToClipboard( selectedPlot.toLowerCase().replace(' ', '-') )
                 }
-                else if (years == 1) {
-                    $(element).find('.date').html('1 year ago');
-                }
-                else if (months > 1) {
-                    $(element).find('.date').html(months + ' months ago');
-                }
-                else if (months == 1) {
-                    $(element).find('.date').html('1 month ago');
-                }
-                else if (days > 1) {
-                    $(element).find('.date').html(days + ' days ago');
-                }
-                else if (days == 1) {
-                    $(element).find('.date').html('1 day ago');
-                }
-                else if (hours > 1) {
-                    $(element).find('.date').html(hours + ' hours ago');
-                }
-                else if (hours == 1) {
-                    $(element).find('.date').html('1 hour ago');
-                }
-                else if (minutes > 1) {
-                    $(element).find('.date').html(minutes + ' minutes ago');
-                }
-                else if (minutes == 1) {
-                    $(element).find('.date').html('1 minute ago');
-                }
-                else {
-                    $(element).find('.date').html('Now');
-                }
-            };
-        };
-
-        setCollapse()
-
-
-
-        months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-        $('.form').on('click', 'button[type=submit]', function () {
-            date = new Date();
-            var $title = $('#plot-title');
-            var $subtitle = $('#plot-subtitle');
-            var $desc = $('#plot-description');
-            var $catagory = $('#plot-catagory');
-
-            var title = $title.val();
-            var subtitle = $subtitle.val();
-            var desc = $desc.val();
-            var catagory = '#' + $catagory.val();
-
-            desc = desc.replace(/\n/g, `</div><div class="text-muted small mb-2">`);
-
-            var newElement = `<li id="` + title.toLowerCase().replace(' ', '-') + `" class="list-group-item bg-dark text-light"><div data-bs-toggle="collapse" role="button" aria-expanded="false" class="plot-title"><div class="d-flex w-100 justify-content-between"><h5 class="mb-1">` + title + `</h5><div class="text-muted small date" title="` + months[date.getMonth()] + ' ' + date.getDate() + ' ' + date.getFullYear() + ', ' + date.getHours() + ':' + date.getMinutes() + `"></div></div><p class="mb-1">` + subtitle + `</p></div><div class="collapse"><div class="text-muted small mb-2">` + desc + `</div></div></li>`;
-
-            if ( $(catagory).length == 0 ) {
-                $('div.row:first').append('<div id="' + catagory.substring(1) + '"></div>');
-                $(catagory).append('<div class="title">' + catagory.substring(1).toUpperCase() + '</div>');
-                $(catagory).append('<ul class="list-group p-2 mb-5"></ul>');  
-            };
-
-            $(catagory).find('.list-group').append(newElement);
-
-            setCollapse();
+            });
         });
-
-
-
-        $('#breadcrumbs').find('h2').on('click', function() {
-            let selectedPlot = prompt("Please enter a plot title", "");
-            if (selectedPlot != null && selectedPlot != "") {
-                copyToClipboard( selectedPlot.toLowerCase().replace(' ', '-') )
-            }
-        });
-
     </script>
 
 </body>
