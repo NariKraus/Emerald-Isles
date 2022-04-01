@@ -218,7 +218,7 @@
             $('#breadcrumbs').find('h2').on('click', function() {
                 let selectedPlot = prompt("Please enter a plot title", "");
                 if (selectedPlot != null && selectedPlot != "") {
-                    copyToClipboard( selectedPlot.toLowerCase().replace(/ /g, '-') )
+                    copyToClipboard( selectedPlot )
                 }
             });
         });
