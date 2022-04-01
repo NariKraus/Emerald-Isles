@@ -222,11 +222,8 @@
                     const $temp = $("<input>");
                     $("body").append($temp);
                     const selected = '#' + selectedPlot;
-                    console.log(selected)
-                    $temp.val($(selected).prop('outerHTML')).select();
-                    document.execCommand("copy");
-                    $temp.remove();
-                }
+                    console.log($(selected).prop('outerHTML'));
+                };
             });
         });
     </script>
