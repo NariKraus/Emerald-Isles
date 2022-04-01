@@ -1,16 +1,3 @@
-<script>
-    function copyToClipboard(element) {
-        element = element.toLowerCase().replace(/ /g, '-');
-        const $temp = $("<input>");
-        $("body").append($temp);
-        const selected = '#' + element;
-        console.log(selected)
-        $temp.val($(selected).prop('outerHTML')).select();
-        document.execCommand("copy");
-        $temp.remove();
-    };
-</script>
-
 <div id="story">
 
     <div class="title">STORY</div>
