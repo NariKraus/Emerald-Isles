@@ -200,7 +200,7 @@
     
                 desc = desc.replace(/\n/g, `</div><div class="text-muted small mb-2">`);
     
-                var newElement = `<li id="` + title.toLowerCase().replace(' ', '-') + `" class="list-group-item bg-dark text-light"><div data-bs-toggle="collapse" role="button" aria-expanded="false" class="plot-title"><div class="d-flex w-100 justify-content-between"><h5 class="mb-1">` + title + `</h5><div class="text-muted small date" title="` + months[date.getMonth()] + ' ' + date.getDate() + ' ' + date.getFullYear() + ', ' + date.getHours() + ':' + date.getMinutes() + `"></div></div><p class="mb-1">` + subtitle + `</p></div><div class="collapse"><div class="text-muted small mb-2">` + desc + `</div></div></li>`;
+                var newElement = `<li id="` + title.toLowerCase().replace(/ /g, '-') + `" class="list-group-item bg-dark text-light"><div data-bs-toggle="collapse" role="button" aria-expanded="false" class="plot-title"><div class="d-flex w-100 justify-content-between"><h5 class="mb-1">` + title + `</h5><div class="text-muted small date" title="` + months[date.getMonth()] + ' ' + date.getDate() + ' ' + date.getFullYear() + ', ' + date.getHours() + ':' + date.getMinutes() + `"></div></div><p class="mb-1">` + subtitle + `</p></div><div class="collapse"><div class="text-muted small mb-2">` + desc + `</div></div></li>`;
     
                 if ( $(catagory).length == 0 ) {
                     $('div.row:first').append('<div id="' + catagory.substring(1) + '"></div>');
@@ -218,7 +218,7 @@
             $('#breadcrumbs').find('h2').on('click', function() {
                 let selectedPlot = prompt("Please enter a plot title", "");
                 if (selectedPlot != null && selectedPlot != "") {
-                    copyToClipboard( selectedPlot.toLowerCase().replace(' ', '-') )
+                    copyToClipboard( selectedPlot.toLowerCase().replace(/ /g, '-') )
                 }
             });
         });
