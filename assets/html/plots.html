@@ -2,7 +2,7 @@
     function copyToClipboard(element) {
         var $temp = $("<input>");
         $("body").append($temp);
-        $temp.val($('.list-group-item:first').prop('outerHTML')).select();
+        $temp.val($('#' + element).prop('outerHTML')).select();
         document.execCommand("copy");
         $temp.remove();
     };
