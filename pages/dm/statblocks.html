@@ -569,17 +569,15 @@
             let params = (new URL(document.location)).searchParams;
             let DM = params.get('DM');
 
-            $(document).ready(function() {
-                for (let i = 0; i < $('.stat-block-title').length; i++) {
-                    const x = $('.stat-block-table .stat-block-title')[i];
-                    if (DM == 'true') {
-                        $(x).html('<a href="/Emerald-Isles/pages/dm/statblock-info.html?DM=true&statblock=' + $(x).text().toLowerCase() + '">' + $(x).text() + '</a>');
-                    }
-                    else {
-                        $(x).html('<a href="/Emerald-Isles/pages/dm/statblock-info.html?statblock=' + $(x).text().toLowerCase() + '">' + $(x).text() + '</a>');
-                    };
+            for (let i = 0; i < $('.stat-block-table .stat-block-title').length; i++) {
+                const x = $('.stat-block-table .stat-block-title')[i];
+                if (DM == 'true') {
+                    $(x).html('<a href="/Emerald-Isles/pages/dm/statblock-info.html?DM=true&statblock=' + $(x).text().toLowerCase() + '">' + $(x).text() + '</a>');
+                }
+                else {
+                    $(x).html('<a href="/Emerald-Isles/pages/dm/statblock-info.html?statblock=' + $(x).text().toLowerCase() + '">' + $(x).text() + '</a>');
                 };
-            });
+            };
         });
     </script>
 
