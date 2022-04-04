@@ -28,10 +28,6 @@
             border-spacing: 1rem 0;
             border-collapse: separate;
         }
-        table:first-of-type {
-            margin-right: auto!important;
-            margin-left: auto!important;
-        }
     </style>
 
 </head>
@@ -103,6 +99,8 @@
             target = target.replace(/ /g, '-').toLowerCase();
             console.log(target);
             $('.row:first').load('/Emerald-Isles/assets/html/statblocks.html ' + target);
+
+            $('table:first').addClass('mx-auto')
         });
     </script>
 
