@@ -553,23 +553,22 @@
             $('#table_wrapper').find('.row:last').find('.col-md-5').addClass('col-md-6').removeClass('col-md-5')
             $('#table_wrapper').find('.row:last').find('.col-md-7').addClass('col-md-6').removeClass('col-md-7')
 
+
+            let params = (new URL(document.location)).searchParams;
+            let DM = params.get('DM');
+
+            $(document).ready(function() {
+                for (let i = 0; i < $('.stat-block-title').length; i++) {
+                    const x = $('.stat-block-title')[i];
+                    if (DM == 'true') {
+                        $(x).html('<a href="/Emerald-Isles/pages/dm/statblock-info.html?DM=true&statblock=' + $(x).text().toLowerCase() + '">' + $(x).text() + '</a>');
+                    }
+                    else {
+                        $(x).html('<a href="/Emerald-Isles/pages/dm/statblock-info.html?statblock=' + $(x).text().toLowerCase() + '">' + $(x).text() + '</a>');
+                    };
+                };
+            });
         });
-    </script>
-
-    <script>
-        $('tbody tr').on('click', function() {
-            var w = 960;
-            var h = 540;
-            var left = Number((window.screen.width / 2)-(w / 2));
-            var top = Number((window.screen.height / 2)-(h / 2));
-
-            left += window.screenX;
-
-            var state = $('.breadcrumbs ol').children().last().text();
-            var win = window.open("statblock-info.html?statblock=" + $(this).find('.stat-block-title').text(), 'newwin', 'height = ' + h + 'px , width = ' + w + 'px');
-            win.moveTo(left, top);
-            win.document.close();
-        })
     </script>
 
 </body>
