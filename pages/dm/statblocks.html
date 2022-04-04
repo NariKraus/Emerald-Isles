@@ -571,7 +571,7 @@
 
             $(document).ready(function() {
                 for (let i = 0; i < $('.stat-block-title').length; i++) {
-                    const x = $('.stat-block-title')[i];
+                    const x = $('.stat-block-table .stat-block-title')[i];
                     if (DM == 'true') {
                         $(x).html('<a href="/Emerald-Isles/pages/dm/statblock-info.html?DM=true&statblock=' + $(x).text().toLowerCase() + '">' + $(x).text() + '</a>');
                     }
