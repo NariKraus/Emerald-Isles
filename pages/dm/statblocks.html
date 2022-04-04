@@ -566,7 +566,7 @@
             left += window.screenX;
 
             var state = $('.breadcrumbs ol').children().last().text();
-            var win = window.open("dm-statblock-info.html?statblock=" + $(this).find('.stat-block-title').text(), 'newwin', 'height = ' + h + 'px , width = ' + w + 'px');
+            var win = window.open("statblock-info.html?statblock=" + $(this).find('.stat-block-title').text(), 'newwin', 'height = ' + h + 'px , width = ' + w + 'px');
             win.moveTo(left, top);
             win.document.close();
         })

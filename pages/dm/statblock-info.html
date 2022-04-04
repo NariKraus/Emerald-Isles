@@ -89,7 +89,7 @@
             let params = (new URL(document.location)).searchParams;
             let statblock = params.get('statblock');
             var target = '#' + statblock;
-            target = target.replace(' ', '-');
+            target = target.replace(/ /g, '-').toLowerCase();
             $('.row:first').load('/Emerald-Isles/assets/html/statblocks.html' + target);
         });
     </script>
