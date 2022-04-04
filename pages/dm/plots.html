@@ -193,8 +193,6 @@
                 setTimeout(minutePassed, millisTill10);
             }, millisTill10);
     
-            setTimes();
-    
             months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     
             $('.form').on('click', 'button[type=submit]', function () {
@@ -234,7 +232,11 @@
                     console.log($(selected).prop('outerHTML'));
                 };
             });
+
+            return setTimes;
         });
+
+        setTimes();
     </script>
 
 </body>
