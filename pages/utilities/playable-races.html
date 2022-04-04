@@ -326,10 +326,10 @@
             for (let i = 0; i < $('.race-line .race-name').length; i++) {
                 const x = $('.race-line .race-name')[i];
                 if (DM == 'true') {
-                    $(x).html('<a href="/Emerald-Isles/utilities-playable-race-info.html?DM=true&race=' + $(x).text().toLowerCase() + '">' + $(x).text() + '</a>');
+                    $(x).html('<a href="/Emerald-Isles/pages/utilities/playable-race-info.html?DM=true&race=' + $(x).text().toLowerCase() + '">' + $(x).text() + '</a>');
                 }
                 else {
-                    $(x).html('<a href="/Emerald-Isles/utilities-playable-race-info.html?race=' + $(x).text().toLowerCase() + '">' + $(x).text() + '</a>');
+                    $(x).html('<a href="/Emerald-Isles/pages/utilities/playable-race-info.html?race=' + $(x).text().toLowerCase() + '">' + $(x).text() + '</a>');
                 };
             };
         });
