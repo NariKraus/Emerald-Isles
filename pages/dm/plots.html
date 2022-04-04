@@ -184,9 +184,13 @@
                 };
             };
 
+            setTimeout(function() {
+                setTimes()
+            }, 1000);
+
             var now = new Date();
             var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), now.getMinutes() + 1, 0, 0) - now;
-            setTimeout(function minutePassed(){
+            setTimeout(function minutePassed() {
                 var now = new Date();
                 var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), now.getMinutes() + 1, 0, 0) - now;
                 setTimes();
@@ -232,11 +236,7 @@
                     console.log($(selected).prop('outerHTML'));
                 };
             });
-
-            return setTimes;
         });
-
-        setTimes();
     </script>
 
 </body>
