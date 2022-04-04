@@ -84,42 +84,14 @@
     <!-- Navbar Loader -->
     <script src="/Emerald-Isles/assets/js/navbar-loader.js"></script>
 
-    <!-- Card Details -->
-
     <script>
-        var jsonStatBlocks = (function () {
-            var jsonStatBlocks = null;
-            $.ajax({
-                'async': false,
-                'global': false,
-                'url': '/Emerald-Isles/data/statblocks.json',
-                'dataType': "json",
-                'success': function (data) {
-                    jsonStatBlocks = data;
-                }
-            });
-            return jsonStatBlocks;
-        })();
-    </script>
-
-    <script>
-        let params = (new URL(document.location)).searchParams;
-        let statblock = params.get('statblock');
-        $statblock = "";
-        var i = -1;
-        while ($statblock != statblock) {
-            i++;
-            $statblock = jsonStatBlocks.statblocks[i].name
-            if (i == 66 && $statblock != statblock) {
-                window.location.href = '404.html';
-            };
-        };
-
-        $('.statblock-name').text(jsonStatBlocks.statblocks[i].name);
-
-        $('.row').html(jsonStatBlocks.statblocks[i].data)
-
-        $('thead tr th').addClass('col-md-2')
+        $(document).ready(function() {
+            let params = (new URL(document.location)).searchParams;
+            let statblock = params.get('statblock');
+            var target = '#' + statblock;
+            target = target.replace(' ', '-');
+            $('.row:first').load('/Emerald-Isles/assets/html/statblocks.html' + target);
+        });
     </script>
 
 </body>

@@ -81,13 +81,12 @@
     <script src="/Emerald-Isles/assets/js/navbar-loader.js"></script>
 
     <script>
-        $(document).ready(function(){
+        $(document).ready(function() {
             let params = (new URL(document.location)).searchParams;
-            let race = params.get('race')
+            let race = params.get('race');
             var target = '#' + race;
-            target = target.replace(' ', '-')
-
-            $('.row:first').load('/Emerald-Isles/assets/html/races.html ' + target)
+            target = target.replace(' ', '-');
+            $('.row:first').load('/Emerald-Isles/assets/html/races.html ' + target);
         });
     </script>
 
