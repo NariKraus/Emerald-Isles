@@ -113,7 +113,11 @@
                     $(element).find('.plot-title').attr('aria-controls', 'plot-' + i);
                     $(element).find('.collapse').attr('id', 'plot-' + i);
                 };
+            };
     
+            setCollapse()
+
+            var setTimes = function () {
                 for (let i = 0; i < $('.list-group-item').length; i++) {
                     const element = $('.list-group-item')[i];
     
@@ -179,10 +183,17 @@
                     }
                 };
             };
+
+            var now = new Date();
+            var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), now.getMinutes() + 1, 0, 0) - now;
+            setTimeout(function minutePassed(){
+                var now = new Date();
+                var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), now.getMinutes() + 1, 0, 0) - now;
+                setTimes();
+                setTimeout(minutePassed, millisTill10);
+            }, millisTill10);
     
-            setCollapse()
-    
-    
+            setTimes();
     
             months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     
