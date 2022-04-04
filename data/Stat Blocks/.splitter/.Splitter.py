@@ -1,6 +1,6 @@
 import os.path
 
-with open('.input.md') as fo:
+with open('.input.md', encoding="utf8") as fo:
     op = ''
     start = 0
     name = ''
