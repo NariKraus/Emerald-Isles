@@ -95,23 +95,6 @@
 
     <script>
         $(document).ready(function() {
-            let params = (new URL(document.location)).searchParams;
-            let DM = params.get('DM');
-
-            for (let i = 0; i < $('.stat-block-table .stat-block-title').length; i++) {
-                const x = $('.stat-block-table .stat-block-title')[i];
-                if (DM == 'true') {
-                    $(x).html('<a href="/Emerald-Isles/pages/dm/statblock-info.html?DM=true&statblock=' + $(x).text().toLowerCase() + '">' + $(x).text() + '</a>');
-                }
-                else {
-                    $(x).html('<a href="/Emerald-Isles/pages/dm/statblock-info.html?statblock=' + $(x).text().toLowerCase() + '">' + $(x).text() + '</a>');
-                };
-            };
-        });
-    </script>
-
-    <script>
-        $(document).ready(function() {
             var $temp = $('<div hidden></div>');
             $('body').append($temp);
             $temp.load('/Emerald-Isles/assets/html/statblocks.html');
@@ -130,6 +113,19 @@
             }, 250);
             
             setTimeout(() => {
+                let params = (new URL(document.location)).searchParams;
+                let DM = params.get('DM');
+
+                for (let i = 0; i < $('.stat-block-table .stat-block-title').length; i++) {
+                    const x = $('.stat-block-table .stat-block-title')[i];
+                    if (DM == 'true') {
+                        $(x).html('<a href="/Emerald-Isles/pages/dm/statblock-info.html?DM=true&statblock=' + $(x).text().toLowerCase() + '">' + $(x).text() + '</a>');
+                    }
+                    else {
+                        $(x).html('<a href="/Emerald-Isles/pages/dm/statblock-info.html?statblock=' + $(x).text().toLowerCase() + '">' + $(x).text() + '</a>');
+                    };
+                };
+
                 $temp.remove();
 
                 // Setup - add a text input to each footer cell
