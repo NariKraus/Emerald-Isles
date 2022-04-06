@@ -125,9 +125,10 @@
                     $('.stat-block-table').append(`<tr class="stat-block-line stat-block-link"><td class="stat-block-title">` + statblockId.replace(/-/g, ' ').replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))) + `</td><td class="stat-block-catagory">` + statblockCatagory + `</td><td class="stat-block-type">` + statblockType + `</td><td class="stat-block-cr">` + statblockCR + `</td></tr>`);
                 };
             };
-            $temp.remove();
-
+            
             setTimeout(() => {
+                $temp.remove();
+                
                 // Setup - add a text input to each footer cell
                 $('#table thead tr')
                     .clone(true)
