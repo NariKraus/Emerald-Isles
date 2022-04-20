@@ -693,9 +693,9 @@ section {
 
 .modal {
   background-image: url('../img/header-bg.png');
-  display: block;
   opacity: 0;
   pointer-events: none;
+  overflow: hidden !important;
 }
 
 .modal.open {
