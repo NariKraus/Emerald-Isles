@@ -703,26 +703,6 @@ section {
   pointer-events: all;
 }
 
-.modal p {
-  color: white;
-  font-size: 2rem;
-  position: absolute;
-  bottom: 0%;
-  left: 50%;
-  transform: translate(-50%, 5%);
-}
-
-#magnifying_area {
-  position: absolute;
-  height: calc(80vw * 0.5625);
-  width: 80vw;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  overflow: hidden;
-  border: solid 5px goldenrod;
-}
-
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
