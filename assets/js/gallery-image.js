@@ -1,7 +1,6 @@
 const modal = document.querySelector(".modal");
 const previews = document.querySelectorAll(".gallery img, .gallery a, .stat-block-link, .item-material");
 const original = document.querySelector(".full-img");
-const caption = document.querySelector(".caption");
 
 previews.forEach(preview => {
     preview.addEventListener('click', () => {
@@ -11,11 +10,8 @@ previews.forEach(preview => {
         openFullscreen();
         // Dynamic change text and image
         const originalSrc = preview.getAttribute("data-original");
+        console.log(originalSrc);
         original.src = originalSrc;
-        const altText = preview.alt;
-        caption.textContent = altText;
-        const zoomFactor = preview.getAttribute("data-zoom-factor");
-        original.dataset.zoom = zoomFactor;
     });
 });
 modal.addEventListener('click', (e) => {
