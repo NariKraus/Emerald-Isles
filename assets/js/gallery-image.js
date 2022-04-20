@@ -2,10 +2,23 @@ const modal = document.querySelector(".modal");
 const previews = document.querySelectorAll(".gallery img, .gallery a, .stat-block-link, .item-material");
 const original = document.querySelector(".full-img");
 
+function disableScrolling() {
+    var x = window.scrollX;
+    var y = window.scrollY;
+    window.onscroll = function() {
+        window.scrollTo(x, y);
+    };
+};
+
+function enableScrolling() {
+    window.onscroll = function() {};
+};
+
 previews.forEach(preview => {
     preview.addEventListener('click', () => {
         modal.classList.add('open');
         original.classList.add('open');
+        disableScrolling();
         openFullscreen();
         // Dynamic change text and image
         const originalSrc = preview.getAttribute("data-original");
@@ -17,6 +30,7 @@ modal.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal')) {
         modal.classList.remove("open");
         original.classList.remove("open");
+        enableScrolling();
         closeFullscreen();
     };
 });
