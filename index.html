@@ -75,12 +75,7 @@
                 </div>
 
                 <div class="col-lg-6 gallery pt-4 pt-lg-0 content">
-                    <img
-                    src = "/Emerald-Isles/data/Maps/Emerald-Isles-Preview.jpeg"
-                    alt = "Map of the Emerald Isles" 
-                    data-original = '/Emerald-Isles/data/Maps/Emerald-Isles-Full.jpeg'
-                    class = "rounded mx-auto d-block map"
-                    />
+                    <img src="/Emerald-Isles/data/Maps/Emerald-Isles-Preview.jpeg" alt="Map of the Emerald Isles" data-original='/Emerald-Isles/data/Maps/Emerald-Isles-Full.jpeg' class="rounded mx-auto d-block map">
                 </div>
             </div>
 
@@ -91,9 +86,8 @@
 
     <div class="modal">
         <figure class="rounded viewport" id="magnifying_area">
-            <img src="" alt="" class="full-img rounded" id="magnifying_img" style="width: 100%; height: 100%;">
+            <img src="" alt="" class="full-img" style="width: 100%; height: 100%;">
         </figure>
-        <p class="caption"></p>
     </div>
 
     <!-- ======= Footer ======= -->
@@ -119,7 +113,7 @@
     <script src="/Emerald-Isles/assets/js/gallery-image.js"></script>
     <script src="/Emerald-Isles/assets/vendor/panzoom/panzoom.min.js"></script>
     <script>
-        PanZoom('.modal');
+        PanZoom('.full-img');
     </script>
 
     <!-- Navbar Loader -->
