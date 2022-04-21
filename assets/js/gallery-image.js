@@ -82,12 +82,8 @@ var pan_instance = panzoom(pan_element, {
     minZoom: 0.8,
     initialZoom: 1,
     smoothScroll: true,
-    bounds: {
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
-    }
+    bounds: true,
+    boundsPadding: 0.1
 });
 
 pan_instance.on('panstart', function(e) {
@@ -102,8 +98,8 @@ pan_instance.on('panend', function(e) {
 //   console.log('Fired when pan ended', e);
     const { x } = e.getTransform();
     const maxTranslate = pan_element.getBoundingClientRect().width - pan_element.clientWidth;
-    if (Math.abs(x) >= maxTranslate) {
-    e.moveBy(-(x + maxTranslate), 0, true);
+    if (-Math.abs(x) >= maxTranslate) {
+    e.moveBy((x + maxTranslate), 0, true);
     }
 });
 
