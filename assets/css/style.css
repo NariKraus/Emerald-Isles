@@ -694,6 +694,7 @@ section {
 .viewport {
   margin: 10vh 10vw;
   overflow: hidden;
+  cursor: move;
 }
 
 .modal {
@@ -713,7 +714,7 @@ section {
   visibility: hidden;
   opacity: 0;
   right: 15px;
-  top: 15px;
+  bottom: 15px;
   z-index: 996;
   background: #cc1616;
   width: 40px;
