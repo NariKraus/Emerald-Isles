@@ -24,14 +24,7 @@ previews.forEach(preview => {
         const originalSrc = preview.getAttribute("data-original");
         console.log(originalSrc);
         original.src = originalSrc;
-        var instance = panzoom(element, {
-            maxZoom: 10,
-            minZoom: 0.8,
-            initialZoom: 1,
-            smoothScroll: true,
-            bounds: true,
-            boundsPadding: 0.1
-        });
+        instance.moveTo(0, 0);
     });
 });
 modal.addEventListener('click', (e) => {
