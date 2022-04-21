@@ -118,6 +118,8 @@
             maxZoom: 10,
             minZoom: 0.8,
             initialZoom: 1,
+            initialX: 0,
+            initialY: 0,
             smoothScroll: true,
             bounds: true,
             boundsPadding: 0.1
@@ -143,10 +145,6 @@
         //   This event will be called along with events above.
         //   console.log('Fired when any transformation has happened', e);
         });
-        
-        setTimeout(() => {
-            instance.moveTo(0, 0);
-        }, 50);
     </script>
 
     <!-- Navbar Loader -->
