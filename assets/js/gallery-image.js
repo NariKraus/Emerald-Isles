@@ -3,8 +3,6 @@ const previews = document.querySelectorAll(".gallery img, .gallery a, .stat-bloc
 const original = document.querySelector(".full-img");
 const pan_element = document.getElementById('panzoom');
 const modal_close = document.getElementById('close-modal');
-var pan_height = 0;
-var pan_width = 0;
 
 function disableScrolling() {
     var x = window.scrollX;
@@ -84,12 +82,11 @@ var pan_instance = panzoom(pan_element, {
     minZoom: 0.8,
     initialZoom: 1,
     smoothScroll: true,
-    boundsDisabledForZoom: true,
     bounds: {
-        top: 864,
+        top: 0,
         right: 0,
         bottom: 0,
-        left: 1536,
+        left: 0,
     }
 });
 
@@ -103,6 +100,11 @@ pan_instance.on('pan', function(e) {
 
 pan_instance.on('panend', function(e) {
 //   console.log('Fired when pan ended', e);
+    const { x } = e.getTransform();
+    const maxTranslate = pan_element.getBoundingClientRect().width - pan_element.clientWidth;
+    if (Math.abs(x) >= maxTranslate) {
+    e.moveBy(-(x + maxTranslate), 0, true);
+    }
 });
 
 pan_instance.on('zoom', function(e) {
