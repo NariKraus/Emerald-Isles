@@ -1,6 +1,7 @@
 const modal = document.querySelector(".modal");
 const previews = document.querySelectorAll(".gallery img, .gallery a, .stat-block-link, .item-material");
 const original = document.querySelector(".full-img");
+const pan_element = document.getElementById('panzoom');
 
 function disableScrolling() {
     var x = window.scrollX;
@@ -24,8 +25,7 @@ previews.forEach(preview => {
         const originalSrc = preview.getAttribute("data-original");
         console.log(originalSrc);
         original.src = originalSrc;
-        instance.moveTo(0, 0);
-        console.log(instance)
+        pan_instance.moveTo(0, 0);
     });
 });
 modal.addEventListener('click', (e) => {
@@ -73,3 +73,33 @@ function closeFullscreen() {
         document.msExitFullscreen();
     };
 };
+
+var pan_pan_instance = panzoom(pan_element, {
+    maxZoom: 10,
+    minZoom: 0.8,
+    initialZoom: 1,
+    smoothScroll: true,
+    bounds: true,
+    boundsPadding: 0.1
+});
+
+pan_instance.on('panstart', function(e) {
+//   console.log('Fired when pan is just started ', e);
+});
+
+pan_instance.on('pan', function(e) {
+//   console.log('Fired when the scene is being panned', e);
+});
+
+pan_instance.on('panend', function(e) {
+//   console.log('Fired when pan ended', e);
+});
+
+pan_instance.on('zoom', function(e) {
+//   console.log('Fired when scene is zoomed', e);
+});
+
+pan_instance.on('transform', function(e) {
+//   This event will be called along with events above.
+//   console.log('Fired when any transformation has happened', e);
+});
