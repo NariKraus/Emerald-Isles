@@ -78,30 +78,30 @@ var instance = panzoom(element, {
     maxZoom: 10,
     minZoom: 0.8,
     initialZoom: 1,
-    transformOrigin: {x: 0, y: 0},
     smoothScroll: true,
     bounds: true,
     boundsPadding: 0.1
-  });
+});
+
+instance.moveTo(0, 0);
 
 instance.on('panstart', function(e) {
-  console.log('Fired when pan is just started ', e);
-  // Note: e === instance.
+//   console.log('Fired when pan is just started ', e);
 });
 
 instance.on('pan', function(e) {
-  console.log('Fired when the scene is being panned', e);
+//   console.log('Fired when the scene is being panned', e);
 });
 
 instance.on('panend', function(e) {
-  console.log('Fired when pan ended', e);
+//   console.log('Fired when pan ended', e);
 });
 
 instance.on('zoom', function(e) {
-  console.log('Fired when scene is zoomed', e);
+//   console.log('Fired when scene is zoomed', e);
 });
 
 instance.on('transform', function(e) {
-  // This event will be called along with events above.
-  console.log('Fired when any transformation has happened', e);
+// This event will be called along with events above.
+//   console.log('Fired when any transformation has happened', e);
 });
