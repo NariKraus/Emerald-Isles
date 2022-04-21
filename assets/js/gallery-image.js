@@ -2,7 +2,7 @@ const modal = document.querySelector(".modal");
 const previews = document.querySelectorAll(".gallery img, .gallery a, .stat-block-link, .item-material");
 const original = document.querySelector(".full-img");
 const pan_element = document.getElementById('panzoom');
-const modal_close = document.getElementById('close-modal');
+const modal_close = document.querySelector('close-modal');
 
 function disableScrolling() {
     var x = window.scrollX;
