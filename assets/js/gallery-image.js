@@ -20,13 +20,13 @@ previews.forEach(preview => {
     preview.addEventListener('click', () => {
         modal.classList.add('open');
         original.classList.add('open');
+        modal_close.classList.add('active');
         disableScrolling();
         openFullscreen();
         // Dynamic change text and image
         const originalSrc = preview.getAttribute("data-original");
         console.log(originalSrc);
         original.src = originalSrc;
-        modal_close.classList.add('active');
         pan_instance.moveTo(0, 0);
     });
 });
