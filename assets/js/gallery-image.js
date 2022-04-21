@@ -2,6 +2,7 @@ const modal = document.querySelector(".modal");
 const previews = document.querySelectorAll(".gallery img, .gallery a, .stat-block-link, .item-material");
 const original = document.querySelector(".full-img");
 const pan_element = document.getElementById('panzoom');
+const modal_close = document.getElementById('close-modal');
 
 function disableScrolling() {
     var x = window.scrollX;
@@ -28,7 +29,7 @@ previews.forEach(preview => {
         pan_instance.moveTo(0, 0);
     });
 });
-modal.addEventListener('click', (e) => {
+modal_close.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal')) {
         modal.classList.remove("open");
         original.classList.remove("open");
