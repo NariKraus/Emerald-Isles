@@ -80,8 +80,12 @@ var pan_instance = panzoom(pan_element, {
     minZoom: 0.8,
     initialZoom: 1,
     smoothScroll: true,
-    bounds: true,
-    boundsPadding: 0.1
+    bounds: {
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+    }
 });
 
 pan_instance.on('panstart', function(e) {
