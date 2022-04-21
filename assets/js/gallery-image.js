@@ -25,6 +25,7 @@ previews.forEach(preview => {
         console.log(originalSrc);
         original.src = originalSrc;
         instance.moveTo(0, 0);
+        console.log(instance)
     });
 });
 modal.addEventListener('click', (e) => {
