@@ -83,8 +83,6 @@ var instance = panzoom(element, {
     boundsPadding: 0.1
 });
 
-instance.moveTo(0, 0);
-
 instance.on('panstart', function(e) {
 //   console.log('Fired when pan is just started ', e);
 });
@@ -104,4 +102,8 @@ instance.on('zoom', function(e) {
 instance.on('transform', function(e) {
 // This event will be called along with events above.
 //   console.log('Fired when any transformation has happened', e);
+});
+
+$(document).ready(function() {
+    instance.moveTo(0, 0);
 });
