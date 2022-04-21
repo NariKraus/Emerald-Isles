@@ -95,6 +95,11 @@ pan_instance.on('pan', function(e) {
 
 pan_instance.on('panend', function(e) {
 //   console.log('Fired when pan ended', e);
+    const { x } = e.getTransform();
+    const maxTranslate = pan_element.getBoundingClientRect().width - pan_element.clientWidth;
+    if (Math.abs(x) >= maxTranslate) {
+    e.moveBy(-(x + maxTranslate), 0, true);
+    }
 });
 
 pan_instance.on('zoom', function(e) {
@@ -104,9 +109,4 @@ pan_instance.on('zoom', function(e) {
 pan_instance.on('transform', function(e) {
 //   This event will be called along with events above.
 //   console.log('Fired when any transformation has happened', e);
-    const { x } = e.getTransform();
-    const maxTranslate = pan_element.getBoundingClientRect().width - pan_element.clientWidth;
-    if (Math.abs(x) >= maxTranslate) {
-    e.moveBy(-(x + maxTranslate), 0, true);
-    }
 });
