@@ -71,39 +71,3 @@ function closeFullscreen() {
         document.msExitFullscreen();
     };
 };
-
-var element = document.getElementById('panview')
-
-var instance = panzoom(element, {
-    maxZoom: 10,
-    minZoom: 0.8,
-    initialZoom: 1,
-    smoothScroll: true,
-    bounds: true,
-    boundsPadding: 0.1
-});
-
-instance.on('panstart', function(e) {
-//   console.log('Fired when pan is just started ', e);
-});
-
-instance.on('pan', function(e) {
-//   console.log('Fired when the scene is being panned', e);
-});
-
-instance.on('panend', function(e) {
-//   console.log('Fired when pan ended', e);
-});
-
-instance.on('zoom', function(e) {
-//   console.log('Fired when scene is zoomed', e);
-});
-
-instance.on('transform', function(e) {
-// This event will be called along with events above.
-//   console.log('Fired when any transformation has happened', e);
-});
-
-$(document).ready(function() {
-    instance.moveTo(0, 0);
-});
