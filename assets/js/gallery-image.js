@@ -78,6 +78,7 @@ var instance = panzoom(element, {
     maxZoom: 10,
     minZoom: 0.8,
     initialZoom: 1,
+    transformOrigin: centerCenter,
     smoothScroll: true,
     bounds: true,
     boundsPadding: 0.1
