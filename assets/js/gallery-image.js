@@ -3,8 +3,8 @@ const previews = document.querySelectorAll(".gallery img, .gallery a, .stat-bloc
 const original = document.querySelector(".full-img");
 const pan_element = document.getElementById('panzoom');
 const modal_close = document.getElementById('close-modal');
-const pan_height = $(document).height() * 0.8;
-const pan_width = $(document).width() * 0.8;
+var pan_height = 0;
+var pan_width = 0;
 
 function disableScrolling() {
     var x = window.scrollX;
@@ -25,6 +25,8 @@ previews.forEach(preview => {
         modal_close.classList.add('active');
         disableScrolling();
         openFullscreen();
+        pan_height = $(document).height() * 0.8;
+        pan_width = $(document).width() * 0.8;
         // Dynamic change text and image
         const originalSrc = preview.getAttribute("data-original");
         console.log(originalSrc);
