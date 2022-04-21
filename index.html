@@ -114,6 +114,8 @@
     <script>
         var element = document.getElementById('panview')
 
+        var instance = panzoom(element);
+
         var instance = panzoom(element, {
             maxZoom: 10,
             minZoom: 0.8,
@@ -121,11 +123,7 @@
             smoothScroll: true,
             bounds: true,
             boundsPadding: 0.1
-        }).zoomAbs(
-            0, // initial x position
-            0, // initial y position
-            0.9 // initial zoom 
-        );
+        });
 
         instance.on('panstart', function(e) {
         //   console.log('Fired when pan is just started ', e);
