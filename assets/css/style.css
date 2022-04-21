@@ -721,6 +721,22 @@ section {
   transition: all 0.4s;
 }
 
+.close-modal i {
+  font-size: 28px;
+  color: #fff;
+  line-height: 0;
+}
+
+.close-modal:hover {
+  background: #e72323;
+  color: #fff;
+}
+
+.close-modal.active {
+  visibility: visible;
+  opacity: 1;
+}
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
