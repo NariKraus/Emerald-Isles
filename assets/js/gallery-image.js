@@ -1,8 +1,8 @@
-const modal = $(".modal");
-const previews = $(".gallery img, .gallery a, .stat-block-link, .item-material");
-const original = $(".full-img");
-const pan_element = $('#panzoom');
-const modal_close = $('#close-modal');
+const modal = document.querySelector(".modal");
+const previews = document.querySelectorAll(".gallery img, .gallery a, .stat-block-link, .item-material");
+const original = document.querySelector(".full-img");
+const pan_element = document.getElementById('panzoom');
+const modal_close = document.getElementById('close-modal');
 const pan_height = $(document).height() * 0.8;
 const pan_width = $(document).width() * 0.8;
 
