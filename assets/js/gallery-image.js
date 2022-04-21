@@ -72,7 +72,14 @@ function closeFullscreen() {
     };
 };
 
-var instance = panzoom($('.full-img'));
+var instance = panzoom($('.full-img'), {
+    maxZoom: 10,
+    minZoom: 0.8,
+    initialZoom: 1,
+    smoothScroll: true,
+    bounds: true,
+    boundsPadding: 0.1
+  });
 
 instance.on('panstart', function(e) {
   console.log('Fired when pan is just started ', e);
