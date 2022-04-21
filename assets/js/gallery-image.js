@@ -30,14 +30,16 @@ previews.forEach(preview => {
         pan_instance.moveTo(0, 0);
     });
 });
-modal_close.addEventListener('click', (e) => {
-    if (e.target.classList.contains('close-modal')) {
-        modal.classList.remove("open");
-        original.classList.remove("open");
-        modal_close.classList.remove('active');
-        enableScrolling();
-        closeFullscreen();
-    };
+previews.forEach(object => {
+    object.addEventListener('click', (e) => {
+        if (e.target.classList.contains('close-modal')) {
+            modal.classList.remove("open");
+            original.classList.remove("open");
+            modal_close.classList.remove('active');
+            enableScrolling();
+            closeFullscreen();
+        };
+    });
 });
 
 function openFullscreen() {
