@@ -2,7 +2,7 @@ const modal = document.querySelector(".modal");
 const previews = document.querySelectorAll(".gallery img, .gallery a, .stat-block-link, .item-material");
 const original = document.querySelector(".full-img");
 const pan_element = document.getElementById('panzoom');
-const modal_close = document.querySelector('close-modal');
+const modal_close = document.getElementById('close-modal');
 
 function disableScrolling() {
     var x = window.scrollX;
@@ -30,16 +30,14 @@ previews.forEach(preview => {
         pan_instance.moveTo(0, 0);
     });
 });
-previews.forEach(object => {
-    object.addEventListener('click', (e) => {
-        if (e.target.classList.contains('close-modal')) {
-            modal.classList.remove("open");
-            original.classList.remove("open");
-            modal_close.classList.remove('active');
-            enableScrolling();
-            closeFullscreen();
-        };
-    });
+modal_close.addEventListener('click', (e) => {
+    if (e.target.classList.contains('close-modal')) {
+        modal.classList.remove("open");
+        original.classList.remove("open");
+        modal_close.classList.remove('active');
+        enableScrolling();
+        closeFullscreen();
+    };
 });
 
 function openFullscreen() {
