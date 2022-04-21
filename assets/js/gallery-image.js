@@ -31,7 +31,7 @@ previews.forEach(preview => {
     });
 });
 modal_close.addEventListener('click', (e) => {
-    if (e.target.classList.contains('modal')) {
+    if (e.target.classList.contains('modal_close')) {
         modal.classList.remove("open");
         original.classList.remove("open");
         modal_close.classList.remove('active');
