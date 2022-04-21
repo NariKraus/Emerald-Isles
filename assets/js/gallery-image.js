@@ -81,7 +81,6 @@ var pan_instance = panzoom(pan_element, {
     maxZoom: 10,
     minZoom: 0.8,
     initialZoom: 1,
-    smoothScroll: true,
     bounds: true,
     boundsPadding: 0.1
 });
