@@ -92,11 +92,11 @@
 
     </main><!-- End #main -->
 
-    <div class="modal">
-        <figure class="rounded viewport" id="magnifying_area">
-            <img src="" alt="" class="full-img rounded" id="magnifying_img" style="width: 100%; height: 100%;">
+    <div class="modal d-flex align-items-center align-middle">
+        <figure class="rounded viewport" id="panzoom">
+            <img src="" alt="" class="full-img" style="width: 100%; height: 100%;">
         </figure>
-        <p class="caption"></p>
+        <a href="#" class="close-modal d-flex align-items-center justify-content-center" id="close-modal"><i class="bi bi-x-circle"></i></a>
     </div>
 
     <!-- ======= Footer ======= -->
@@ -124,11 +124,12 @@
 
     <!-- Navbar Loader -->
     <script src="/Emerald-Isles/assets/js/navbar-loader.js"></script>
-    <script src="/Emerald-Isles/assets/js/gallery-image.js"></script>
+
+    <!-- Modal JS Files -->
     <script src="/Emerald-Isles/assets/vendor/panzoom/panzoom.min.js"></script>
-    <script>
-        PanZoom('.full-img', {minScale: 0.8, maxScale: 10, increment: 0.05, liner: true});
-    </script>
+    <script src="/Emerald-Isles/assets/js/gallery-image.js"></script>
+    
+    <!-- Sneaky JS -->
     <script src="/Emerald-Isles/assets/js/state-races.js"></script>
 
 </body>
