@@ -72,7 +72,9 @@ function closeFullscreen() {
     };
 };
 
-var instance = panzoom($('.full-img'), {
+var element = document.getElementById('panview')
+
+var instance = panzoom(element, {
     maxZoom: 10,
     minZoom: 0.8,
     initialZoom: 1,
