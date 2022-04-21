@@ -98,8 +98,8 @@ pan_instance.on('panend', function(e) {
 //   console.log('Fired when pan ended', e);
     const { x } = e.getTransform();
     const maxTranslate = pan_element.getBoundingClientRect().width - pan_element.clientWidth;
-    if (-Math.abs(x) >= maxTranslate) {
-    e.moveBy((x + maxTranslate), 0, true);
+    if (Math.abs(x) >= maxTranslate) {
+    e.moveBy(-(x + maxTranslate), 0, true);
     }
 });
 
