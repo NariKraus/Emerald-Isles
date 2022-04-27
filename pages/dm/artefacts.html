@@ -237,7 +237,6 @@
         $('ul[data-artefact]').click(function() {
             for (let i = 0; i < $('.artefact-collapse').length; i++) {
                 const x = $('.artefact-collapse')[i];
-                console.log($(x).attr('id') + " : " + $(this).attr('data-artefact'))
                 if ($(x).attr('id') == $(this).attr('data-artefact')) {
                     $(x).toggleClass('open');
                 }
