@@ -66,6 +66,26 @@
                                     <td>1d8, bludgeoning, - versatile (1d10)</td>
                                     <td>2 lb.</td>
                                 </tr>
+                                <tr>
+                                    <div id="Akmon" class="accordion-collapse collapse" data-bs-parent="#artefact-accordion">
+                                        <p>Duravia's hammer works wonders and disasters, the god of the forge using it to craft ground-breaking marvels and dangerous inventions in equal measure. Duravia rarely bestows Akmon on mortals but occasionally leaves it unattended at his forge in Mount Velus. When Duravia does permit a mortal to use the hammer, it's usually so they might bring an important work into being, wreck a force of destruction, or forge something remarkable somewhere the god isn't welcome.</p>
+                                        <p><em><strong>Hammer of the Forge.</strong></em> This magic warhammer grants a +3 bonus to attack and damage rolls made with it. When you hit with an attack using it, the target takes an extra 3d10 fire damage.</p>
+                                        <p><em><strong>Blessing of the Forge.</strong></em> If you are a worshiper of Duravia, you gain all the following benefits for which you have the required piety:</p>
+                                        <blockquote>
+                                            <ul>
+                                                <li><em><strong>Piety 10+</strong></em> The hammer has 1 randomly determined minor beneficial property.</li>
+                                                <li><em><strong>Piety 25+</strong></em> The hammer has 1 randomly determined major beneficial property.</li>
+                                                <li><em><strong>Piety 50+</strong></em> The hammer has 1 additional randomly determined major beneficial property.</li>
+                                            </ul>
+                                        </blockquote>
+                                        <blockquote>
+                                            <p>If you aren't a worshiper of Duravia, the hammer has 2 randomly determined minor detrimental properties.</p>
+                                        </blockquote>
+                                        <p><em><strong>Reforged.</strong></em> While holding the hammer, you have resistance to fire damage and are immune to exhaustion. Additionally, you have proficiency with smith's tools and have advantage on all ability checks made using them.</p>
+                                        <p><em><strong>Spells.</strong></em> While the hammer is on your person, you can use an action to cast one of the following spells (save DC 18): animate objects, heat metal, fabricate, magic weapon, mending, shatter. Once you use the hammer to cast a spell, the spell can't be cast again from it until the next dusk.</p>
+                                        <p><em><strong>Destroying the Hammer.</strong></em> To destroy the hammer, it must be taken to the realm of Tizerus, in the Underworld. There it must be coated in clay from the Mire of Punishment. The heat of the hammer hardens the clay, which fuses to it after one month. Once fully hardened, the clay-covered hammer must be swallowed and digested by a kraken.</p>
+                                    </div>
+                                </tr>
                                 <tr role="button" data-bs-toggle="collapse" data-bs-target="#Dekella" aria-expanded="true" aria-controls="Dekella">
                                     <td>Dekella, Bident of Sarishara</td>
                                     <td>weapon (trident), martial weapon, melee weapon</td>
@@ -95,24 +115,7 @@
                     </div>
 
                     <div>
-                        <div id="Akmon" class="accordion-collapse collapse" data-bs-parent="#artefact-accordion">
-                            <p>Duravia's hammer works wonders and disasters, the god of the forge using it to craft ground-breaking marvels and dangerous inventions in equal measure. Duravia rarely bestows Akmon on mortals but occasionally leaves it unattended at his forge in Mount Velus. When Duravia does permit a mortal to use the hammer, it's usually so they might bring an important work into being, wreck a force of destruction, or forge something remarkable somewhere the god isn't welcome.</p>
-                            <p><em><strong>Hammer of the Forge.</strong></em> This magic warhammer grants a +3 bonus to attack and damage rolls made with it. When you hit with an attack using it, the target takes an extra 3d10 fire damage.</p>
-                            <p><em><strong>Blessing of the Forge.</strong></em> If you are a worshiper of Duravia, you gain all the following benefits for which you have the required piety:</p>
-                            <blockquote>
-                                <ul>
-                                    <li><em><strong>Piety 10+</strong></em> The hammer has 1 randomly determined minor beneficial property.</li>
-                                    <li><em><strong>Piety 25+</strong></em> The hammer has 1 randomly determined major beneficial property.</li>
-                                    <li><em><strong>Piety 50+</strong></em> The hammer has 1 additional randomly determined major beneficial property.</li>
-                                </ul>
-                            </blockquote>
-                            <blockquote>
-                                <p>If you aren't a worshiper of Duravia, the hammer has 2 randomly determined minor detrimental properties.</p>
-                            </blockquote>
-                            <p><em><strong>Reforged.</strong></em> While holding the hammer, you have resistance to fire damage and are immune to exhaustion. Additionally, you have proficiency with smith's tools and have advantage on all ability checks made using them.</p>
-                            <p><em><strong>Spells.</strong></em> While the hammer is on your person, you can use an action to cast one of the following spells (save DC 18): animate objects, heat metal, fabricate, magic weapon, mending, shatter. Once you use the hammer to cast a spell, the spell can't be cast again from it until the next dusk.</p>
-                            <p><em><strong>Destroying the Hammer.</strong></em> To destroy the hammer, it must be taken to the realm of Tizerus, in the Underworld. There it must be coated in clay from the Mire of Punishment. The heat of the hammer hardens the clay, which fuses to it after one month. Once fully hardened, the clay-covered hammer must be swallowed and digested by a kraken.</p>
-                        </div>
+                        
                         <div id="Dekella" class="accordion-collapse collapse" data-bs-parent="#artefact-accordion">
                             <p>Sarishara wields Dekella, a two-pronged weapon gifted to her by Duravia. When the god of the sea bestows her weapon on a mortal, it's often so they might work her will far from the ocean, right some wrong affecting those she'd prefer not to harm, or give a mortal a glimpse of her terrible responsibilities.</p>
                             <p><em><strong>Bident of the Deep.</strong></em> Sarishara's signature weapon thrums with the icy currents of the deep ocean. This weapon functions as a trident that grants a +3 bonus to attack and damage rolls made with it. When you hit with an attack using the bident, the target takes an extra 2d10 cold damage.</p>
@@ -219,6 +222,12 @@
 
     <!-- Navbar Loader -->
     <script src="/Emerald-Isles/assets/js/navbar-loader.js"></script>
+
+    <script>
+        $("tr:not(.hidden)").each(function (index) {
+            $(this).toggleClass("stripe", !!(index & 1));
+        });
+    </script>
 
     <script>
         $(document).ready(function () {
