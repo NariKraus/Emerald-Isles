@@ -52,22 +52,11 @@
 
                 <div class="row justify-content-center">
                     <div class="col-4">
-                        <p>Duravia's hammer works wonders and disasters, the god of the forge using it to craft ground-breaking marvels and dangerous inventions in equal measure. Duravia rarely bestows Akmon on mortals but occasionally leaves it unattended at his forge in Mount Velus. When Duravia does permit a mortal to use the hammer, it's usually so they might bring an important work into being, wreck a force of destruction, or forge something remarkable somewhere the god isn't welcome.</p>
-                        <p><em><strong>Hammer of the Forge.</strong></em> This magic warhammer grants a +3 bonus to attack and damage rolls made with it. When you hit with an attack using it, the target takes an extra 3d10 fire damage.</p>
-                        <p><em><strong>Blessing of the Forge.</strong></em> If you are a worshiper of Duravia, you gain all the following benefits for which you have the required piety:</p>
-                        <blockquote>
-                            <ul>
-                                <li><em><strong>Piety 10+</strong></em> The hammer has 1 randomly determined minor beneficial property.</li>
-                                <li><em><strong>Piety 25+</strong></em> The hammer has 1 randomly determined major beneficial property.</li>
-                                <li><em><strong>Piety 50+</strong></em> The hammer has 1 additional randomly determined major beneficial property.</li>
-                            </ul>
-                        </blockquote>
-                        <blockquote>
-                            <p>If you aren't a worshiper of Duravia, the hammer has 2 randomly determined minor detrimental properties.</p>
-                        </blockquote>
-                        <p><em><strong>Reforged.</strong></em> While holding the hammer, you have resistance to fire damage and are immune to exhaustion. Additionally, you have proficiency with smith's tools and have advantage on all ability checks made using them.</p>
-                        <p><em><strong>Spells.</strong></em> While the hammer is on your person, you can use an action to cast one of the following spells (save DC 18): animate objects, heat metal, fabricate, magic weapon, mending, shatter. Once you use the hammer to cast a spell, the spell can't be cast again from it until the next dusk.</p>
-                        <p><em><strong>Destroying the Hammer.</strong></em> To destroy the hammer, it must be taken to the realm of Tizerus, in the Underworld. There it must be coated in clay from the Mire of Punishment. The heat of the hammer hardens the clay, which fuses to it after one month. Once fully hardened, the clay-covered hammer must be swallowed and digested by a kraken.</p>
+                        <ul class="text-center" data-artefact="#Akmon">
+                            <li>Akmon, Hammer of Duravia</li>
+                            <li>weapon (warhammer), martial weapon, melee weapon</li>
+                            <li>1d8, bludgeoning, - versatile (1d10)</li>
+                        </ul>
                     </div>
                     <div class="col-4">
                         <p>Sarishara wields Dekella, a two-pronged weapon gifted to her by Duravia. When the god of the sea bestows her weapon on a mortal, it's often so they might work her will far from the ocean, right some wrong affecting those she'd prefer not to harm, or give a mortal a glimpse of her terrible responsibilities.</p>
@@ -149,6 +138,27 @@
                     </div>
                 </div>
 
+                <div>
+                    <div class="collapse" id="Akmon">
+                        <p>Duravia's hammer works wonders and disasters, the god of the forge using it to craft ground-breaking marvels and dangerous inventions in equal measure. Duravia rarely bestows Akmon on mortals but occasionally leaves it unattended at his forge in Mount Velus. When Duravia does permit a mortal to use the hammer, it's usually so they might bring an important work into being, wreck a force of destruction, or forge something remarkable somewhere the god isn't welcome.</p>
+                        <p><em><strong>Hammer of the Forge.</strong></em> This magic warhammer grants a +3 bonus to attack and damage rolls made with it. When you hit with an attack using it, the target takes an extra 3d10 fire damage.</p>
+                        <p><em><strong>Blessing of the Forge.</strong></em> If you are a worshiper of Duravia, you gain all the following benefits for which you have the required piety:</p>
+                        <blockquote>
+                            <ul>
+                                <li><em><strong>Piety 10+</strong></em> The hammer has 1 randomly determined minor beneficial property.</li>
+                                <li><em><strong>Piety 25+</strong></em> The hammer has 1 randomly determined major beneficial property.</li>
+                                <li><em><strong>Piety 50+</strong></em> The hammer has 1 additional randomly determined major beneficial property.</li>
+                            </ul>
+                        </blockquote>
+                        <blockquote>
+                            <p>If you aren't a worshiper of Duravia, the hammer has 2 randomly determined minor detrimental properties.</p>
+                        </blockquote>
+                        <p><em><strong>Reforged.</strong></em> While holding the hammer, you have resistance to fire damage and are immune to exhaustion. Additionally, you have proficiency with smith's tools and have advantage on all ability checks made using them.</p>
+                        <p><em><strong>Spells.</strong></em> While the hammer is on your person, you can use an action to cast one of the following spells (save DC 18): animate objects, heat metal, fabricate, magic weapon, mending, shatter. Once you use the hammer to cast a spell, the spell can't be cast again from it until the next dusk.</p>
+                        <p><em><strong>Destroying the Hammer.</strong></em> To destroy the hammer, it must be taken to the realm of Tizerus, in the Underworld. There it must be coated in clay from the Mire of Punishment. The heat of the hammer hardens the clay, which fuses to it after one month. Once fully hardened, the clay-covered hammer must be swallowed and digested by a kraken.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -176,77 +186,9 @@
     <script src="/Emerald-Isles/assets/js/navbar-loader.js"></script>
 
     <script>
-        $("tr:not(.hidden)").each(function (index) {
-            $(this).toggleClass("stripe", !!(index & 1));
-        });
-    </script>
-
-    <script>
-        $(document).ready(function () {
-            // Setup - add a text input to each footer cell
-            $('#table thead tr')
-                .clone(true)
-                .addClass('filters')
-                .appendTo('#table thead');
-
-            var table = $('#table').DataTable({
-                orderCellsTop: true,
-                fixedHeader: true,
-                initComplete: function () {
-                    var api = this.api();
-
-                    // For each column
-                    api
-                        .columns()
-                        .eq(0)
-                        .each(function (colIdx) {
-                            // Set the header cell to contain the input element
-                            var cell = $('.filters th').eq(
-                                $(api.column(colIdx).header()).index()
-                            );
-                            var title = $(cell).text();
-                            $(cell).html('<input type="text" placeholder="' + title + '" />');
-
-                            // On every keypress in this input
-                            $(
-                                'input',
-                                $('.filters th').eq($(api.column(colIdx).header()).index())
-                            )
-                                .off('keyup change')
-                                .on('keyup change', function (e) {
-                                    e.stopPropagation();
-
-                                    // Get the search value
-                                    $(this).attr('title', $(this).val());
-                                    var regexr = '({search})'; //$(this).parents('th').find('select').val();
-
-                                    var cursorPosition = this.selectionStart;
-                                    // Search the column for that value
-                                    api
-                                        .column(colIdx)
-                                        .search(
-                                            this.value != ''
-                                                ? regexr.replace('{search}', '(((' + this.value + ')))')
-                                                : '',
-                                            this.value != '',
-                                            this.value == ''
-                                        )
-                                        .draw();
-
-                                    $(this)
-                                        .focus()[0]
-                                        .setSelectionRange(cursorPosition, cursorPosition);
-                                });
-                        });
-                },
-            });
-
-            $('#table_wrapper').find('.row:first').remove();
-
-            $('#table_wrapper').find('.row:last').find('.col-md-5').addClass('col-md-6').removeClass('col-md-5')
-            $('#table_wrapper').find('.row:last').find('.col-md-7').addClass('col-md-6').removeClass('col-md-7')
-
-        });
+        $('ul[data-artefact]').click(function() {
+            $(this).attr('data-artefact')
+        })
     </script>
 
 </body>
