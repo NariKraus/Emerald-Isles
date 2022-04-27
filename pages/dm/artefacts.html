@@ -26,23 +26,17 @@
 
     <style>
         .artefact-collapse {
-            display: none;
+            visibility: none;
         }
 
         .artefact-collapse.open {
-            display: block;
+            visibility: block;
         }
 
         ul.no-bullets {
             list-style-type: none; /* Remove bullets */
             padding: 0; /* Remove padding */
             margin: 0; /* Remove margins */
-        }
-        .artefact {
-            padding: 40px;
-            border-left: 1px solid #d9e8f4;
-            border-bottom: 1px solid #d9e8f4;
-            margin: -1px;
         }
     </style>
 
@@ -73,35 +67,35 @@
             <div class="container">
 
                 <div class="row justify-content-center">
-                    <div class="col-6 artefact">
+                    <div class="col-6" style="border-right: 1px solid white; border-bottom: 1px solid white; margin: -1px;">
                         <ul class="text-center no-bullets" data-artefact="Akmon">
                             <li>Akmon, Hammer of Duravia</li>
                             <li>warhammer</li>
                             <li>1d8, bludgeoning, - versatile (1d10)</li>
                         </ul>
                     </div>
-                    <div class="col-6 artefact">
+                    <div class="col-6" style="border-left: 1px solid white; border-bottom: 1px solid white; margin: -1px;">
                         <ul class="text-center no-bullets" data-artefact="Dekella">
                             <li>Dekella, Bident of Thassa</li>
                             <li>trident</li>
                             <li>1d6, piercing, - thrown (20/60 ft.), versatile (1d8)</li>
                         </ul>
                     </div>
-                    <div class="col-6 artefact">
+                    <div class="col-6" style="border-right: 1px solid white; border-bottom: 1px solid white; margin: -1px;">
                         <ul class="text-center no-bullets" data-artefact="Ephixis">
                             <li>Ephixis, Bow of Nylea</li>
-                            <li>shortbowli>
+                            <li>shortbow<li>
                             <li>1d6, piercing, - ammunition (80/320 ft.), two-handed</li>
                         </ul>
                     </div>
-                    <div class="col-6 artefact">
+                    <div class="col-6" style="border-left: 1px solid white; border-bottom: 1px solid white; margin: -1px;">
                         <ul class="text-center no-bullets" data-artefact="Khrusor">
                             <li>Khrusor, Spear of Heliod</li>
                             <li>spear</li>
                             <li>1d6, piercing, - thrown (20/60 ft.), versatile (1d8)</li>
                         </ul>
                     </div>
-                    <div class="col-6 artefact">
+                    <div class="col-6">
                         <ul class="text-center no-bullets" data-artefact="Mastix">
                             <li>Mastix, Whip of Erebos</li>
                             <li>whip</li>
@@ -109,6 +103,8 @@
                         </ul>
                     </div>
                 </div>
+
+                <div class="my-4"></div>
 
                 <div>
                     <div class="artefact-collapse" id="Akmon">
