@@ -279,20 +279,19 @@
             for (let i = 0; i < $('.artefact-collapse').length; i++) {
                 const x = $('.artefact-collapse')[i];
                 if ($(x).attr('id') == $(this).attr('data-artefact')) {
-                    if ($(x).hasClass('out')) {
-                        $(x).show();
-                        $(x).removeClass('out').addClass('active');
-                    }
-                    else {
+                    if ($(x).hasClass('active')) {
                         $(x).removeClass('active').addClass('out');
-
                         setTimeout(function(){
-                            $(x).hide() 
+                            $(x).hide() ;
                         }, 300); //Same time as animation
                     }
+                    else {
+                        $(x).show();
+                        $(x).removeClass('out').addClass('active');
+                    };
                 }
                 else {
-                    $(x).hide()
+                    $(x).hide();
                 };
             };
         });
