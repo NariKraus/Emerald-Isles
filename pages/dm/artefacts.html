@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Emerald Isles - Players</title>
+    <title>Emerald Isles - Artefacts</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -24,68 +24,7 @@
     <!-- Main CSS File -->
     <link href="/Emerald-Isles/assets/css/style.css" rel="stylesheet">
 
-    <style>
-        ul.no-bullets {
-            list-style-type: none; /* Remove bullets */
-            padding: 0; /* Remove padding */
-            margin: 0; /* Remove margins */
-        }
-
-        .artefact {
-            padding: 20px;
-            margin: 20px;
-            -webkit-box-shadow: 0px 0px 5px 5px var(--bs-dark); 
-            box-shadow: 0px 0px 5px 5px var(--bs-dark);
-            background-color: #21252980;
-        }
-
-        .artefact-title {
-            color: var(--bs-light);
-            text-shadow: 4px 3px 0 var(--bs-dark);
-        }
-
-        .artefact-collapse.active {
-            animation: scale-display 0.3s;
-        }
-        .artefact-collapse.out {
-            animation: scale-display--reversed 0.3s;
-            animation-fill-mode: forwards;
-        }
-        @keyframes scale-display {
-            0% {
-                opacity: 0;
-                transform: scale(0);
-            -webkit-transform: scale(0);
-            }
-
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            -webkit-transform: scale(1);
-            }
-        }
-
-        @keyframes scale-display--reversed {
-            0% {
-                display: inline-flex;
-                opacity: 1;
-                transform: scale(1);
-                -webkit-transform: scale(1);
-            }
-            99% {
-                display: inline-flex;
-                opacity: 0;
-                transform: scale(0);
-                -webkit-transform: scale(0);
-            }
-            100% {
-                display: none;
-                opacity: 0;
-                transform: scale(0);
-                -webkit-transform: scale(0);
-            }
-        }
-    </style>
+    <link href="/Emerald-Isles/assets/css/artefacts.css" rel="stylesheet">
 
 </head>
 
@@ -102,10 +41,10 @@
             <div class="container">
 
                 <ol>
-                    <li>Players</li>
-                    <li>Player Characters</li>
+                    <li>Game Master</li>
+                    <li>Artefacts</li>
                 </ol>
-                <h2>Player Characters</h2>
+                <h2>Artefacts</h2>
 
             </div>
         </section><!-- End Breadcrumbs -->
@@ -115,21 +54,48 @@
 
                 <div class="row justify-content-center">
                     <div class="col-3 artefact">
+                        <ul class="text-center no-bullets" role="button" data-artefact="Aftothysia">
+                            <li>Aftothysia, Sword of Ukuhara</li>
+                            <li>Self-Sacrifice, LG, War</li>
+                            <li>shortsword</li>
+                            <li>1d6, piercing</li>
+                            <li>finesse, light</li>
+                        </ul>
+                    </div>
+                    <div class="col-3 artefact">
+                        <ul class="text-center no-bullets" role="button" data-artefact="Atychia">
+                            <li>Atychia, Dagger of Narabam</li>
+                            <li>Misfortune, CE, Trickery</li>
+                            <li>dagger</li>
+                            <li>1d4, piercing</li>
+                            <li>finesse, light, thrown</li>
+                        </ul>
+                    </div>
+                    <div class="col-3 artefact">
+                        <ul class="text-center no-bullets" role="button" data-artefact="Charos">
+                            <li>Charos, Glaive of Nanu</li>
+                            <li>Death, NE, Death</li>
+                            <li>glaive</li>
+                            <li>1d10, slashing</li>
+                            <li>heavy, reach, two-handed</li>
+                        </ul>
+                    </div>
+                    <div class="col-3 artefact">
+                        <ul class="text-center no-bullets" role="button" data-artefact="Dasi">
+                            <li>Dasi, Axe of Manitua</li>
+                            <li>Forests, NG, Nature</li>
+                            <li>greataxe</li>
+                            <li>1d12, slashing</li>
+                            <li>heavy, two-handed</li>
+                        </ul>
+                    </div>
+                    <div class="col-3 artefact">
                         <ul class="text-center no-bullets" role="button" data-artefact="Dimios">
                             <li>Dimios, Hammer of Duravia</li>
                             <li>Creation, LG, Forge</li>
                             <li>warhammer</li>
                             <li>1d8, bludgeoning</li>
                             <li>versatile</li>
-                        </ul>
-                    </div>
-                    <div class="col-3 artefact">
-                        <ul class="text-center no-bullets" role="button" data-artefact="Thal">
-                            <li>Thal, Bident of Sarishara</li>
-                            <li>Sea, CE, Tempest</li>
-                            <li>trident</li>
-                            <li>1d6, piercing</li>
-                            <li>thrown, versatile</li>
                         </ul>
                     </div>
                     <div class="col-3 artefact">
@@ -150,39 +116,12 @@
                         </ul>
                     </div>
                     <div class="col-3 artefact">
-                        <ul class="text-center no-bullets" role="button" data-artefact="Aftothysia">
-                            <li>Aftothysia, Sword of Ukuhara</li>
-                            <li>Self-Sacrifice, LG, War</li>
-                            <li>shortsword</li>
+                        <ul class="text-center no-bullets" role="button" data-artefact="Thal">
+                            <li>Thal, Bident of Sarishara</li>
+                            <li>Sea, CE, Tempest</li>
+                            <li>trident</li>
                             <li>1d6, piercing</li>
-                            <li>finesse, light</li>
-                        </ul>
-                    </div>
-                    <div class="col-3 artefact">
-                        <ul class="text-center no-bullets" role="button" data-artefact="Dasi">
-                            <li>Dasi, Axe of Manitua</li>
-                            <li>Forests, NG, Nature</li>
-                            <li>greataxe</li>
-                            <li>1d12, slashing</li>
-                            <li>heavy, two-handed</li>
-                        </ul>
-                    </div>
-                    <div class="col-3 artefact">
-                        <ul class="text-center no-bullets" role="button" data-artefact="Atychia">
-                            <li>Atychia, Dagger of Narabam</li>
-                            <li>Misfortune, CE, Trickery</li>
-                            <li>dagger</li>
-                            <li>1d4, piercing</li>
-                            <li>finesse, light, thrown</li>
-                        </ul>
-                    </div>
-                    <div class="col-3 artefact">
-                        <ul class="text-center no-bullets" role="button" data-artefact="Charos">
-                            <li>Charos, Glaive of Nanu</li>
-                            <li>Death, NE, Death</li>
-                            <li>glaive</li>
-                            <li>1d10, slashing</li>
-                            <li>heavy, reach, two-handed</li>
+                            <li>thrown, versatile</li>
                         </ul>
                     </div>
                 </div>
