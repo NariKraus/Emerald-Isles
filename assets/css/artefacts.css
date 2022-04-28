@@ -1,0 +1,60 @@
+ul.no-bullets {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}
+
+.artefact {
+    padding: 20px;
+    margin: 20px;
+    -webkit-box-shadow: 0px 0px 5px 5px var(--bs-dark); 
+    box-shadow: 0px 0px 5px 5px var(--bs-dark);
+    background-color: #21252980;
+}
+
+.artefact-title {
+    color: var(--bs-light);
+    text-shadow: 4px 3px 0 var(--bs-dark);
+}
+
+.artefact-collapse.active {
+    animation: scale-display 0.3s;
+}
+.artefact-collapse.out {
+    animation: scale-display--reversed 0.3s;
+    animation-fill-mode: forwards;
+}
+@keyframes scale-display {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    -webkit-transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    -webkit-transform: scale(1);
+    }
+}
+
+@keyframes scale-display--reversed {
+    0% {
+        display: inline-flex;
+        opacity: 1;
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+    99% {
+        display: inline-flex;
+        opacity: 0;
+        transform: scale(0);
+        -webkit-transform: scale(0);
+    }
+    100% {
+        display: none;
+        opacity: 0;
+        transform: scale(0);
+        -webkit-transform: scale(0);
+    }
+}
