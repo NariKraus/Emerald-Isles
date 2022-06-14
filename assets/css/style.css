@@ -801,11 +801,11 @@ section {
 blockquote p {
   margin: 5px 0;
   line-height: 1.25em;
+  font-size: 0.9em;
+}
+blockquote span {
+  font-weight: bold;
 }
 blockquote hr {
   margin: 0.5rem 0;
-}
-
-.racial-ASI, .racial-size, .racial-speed {
-  text-decoration: underline;
 }
