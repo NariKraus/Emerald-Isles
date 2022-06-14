@@ -304,30 +304,15 @@
                         </div>
                     </div>
                     <div class="col-6">
+                        <div id="race-info">
+
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
     </main><!-- End #main -->
-
-    <div class="modal">
-        <div class="bg-dark text-light" id="race-info-card">
-            <div class="container" id="race-info-card-information">
-                <h1 class="text-center mt-3 mb-3" id="race-info-card-name"></h1>
-                <ul id="race-info-card-stats" style="margin: 0; padding-right: 32px">
-                    <li class="h5 mt-1 mb-1" style="list-style: none;" id="race-info-card-asi"><b>Ability Scores:</b> <span id="race-info-card-asi-value"></span></li>
-                    <li class="h5 mt-1 mb-1" style="list-style: none;" id="race-info-card-size"><b>Size:</b> <span id="race-info-card-size-value"></span></li>
-                    <li class="h5 mt-1 mb-1" style="list-style: none;" id="race-info-card-speed"><b>Speed:</b> <span id="race-info-card-speed-value"></span></li>
-                </ul>
-                <div class="divider"></div>
-                <ul id="race-info-card-abilities" style="margin: 0; padding-right: 32px;">
-
-                </ul>
-            </div>
-        </div>
-        <p class="caption"></p>
-    </div>
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
@@ -365,19 +350,11 @@
     </script>
 
     <script>
-        var jsonTerrains = (function () {
-            var jsonTerrains = null;
-            $.ajax({
-                'async': false,
-                'global': false,
-                'url': '/Emerald-Isles/data/race terrains.json',
-                'dataType': "json",
-                'success': function (data) {
-                    jsonTerrains = data;
-                }
-            });
-            return jsonTerrains;
-        })();
+        function loadRace(race) {
+            $('#race-info').load('/Emerald-Isles/assets/html/races.html ' + race);
+        };
+
+        loadRace(document.location.hash.substring(1))
     </script>
 
 </body>
