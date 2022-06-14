@@ -304,7 +304,7 @@
                         </div>
                     </div>
                     <div class="col-6">
-                        <div id="race-info">
+                        <div id="race-info" style="max-height: 602px; overflow-y: scroll;">
 
                         </div>
                     </div>
@@ -354,7 +354,9 @@
             $('#race-info').load('/Emerald-Isles/assets/html/races.html ' + race);
         };
 
-        loadRace(document.location.hash.replace("%20", " "));
+        if (document.location.hash != '') {
+            loadRace(document.location.hash);
+        };
     </script>
 
 </body>
