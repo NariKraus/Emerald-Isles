@@ -796,62 +796,16 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Table Settings
+# Playable Races Info
 --------------------------------------------------------------*/
-.divider {
-  width: 100%;
+blockquote p {
+  margin: 5px 0;
+  line-height: 1.25em;
+}
+blockquote hr {
+  margin: 0.5rem 0;
 }
 
-.divider div {
-  margin: 6px 0;
-  height: 2px;
-  box-shadow: 0 0 5px white;
-}
-
-.subrace-entry {
-  padding: 0 6px;
-}
-
-table.stats th {
-  font-weight: 100;
-}
-
-.race-data div {
-  margin-bottom: 10px;
-}
-
-.subrace-slots div {
-  margin-bottom: 10px;
-}
-
-table.stats b{
-  font-weight: 900 !important;
-  font-style: italic;
-}
-
-#table tbody tr:hover {
-  text-shadow: 0 0 12.5px red;
-}
-
-/*  */
-div.title {
-  width: 100%;
-  border-bottom: 2px solid var(--bs-secondary);
-}
-
-.damage-type {
-  color: #cc1616;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.test-overlay {
-  background-image: url('../img/image.png');
-  background-size: cover;
-}
-
-
-
-.hiddenRow {
-  padding: 0 !important;
+.racial-ASI, .racial-size, .racial-speed {
+  text-decoration: underline;
 }
