@@ -20,7 +20,7 @@
 
 @media (max-width: 992px) {
     .list_body {
-        max-height: 169px;
+        max-height: 169px !important;
     }
 
     .list {
