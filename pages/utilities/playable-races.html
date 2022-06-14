@@ -359,7 +359,7 @@
         $(document).ready(function() {
             for (let i = 0; i < $('a.row_inner').length; i++) {
                 const element = $('a.row_inner')[i];
-                $('element').attr('href', document.location.pathname.substring(15) + '#' + $(element).attr('listID'));
+                $(element).attr('href', document.location.pathname.substring(15) + '#' + $(element).attr('listID'));
             };
         });
     </script>
