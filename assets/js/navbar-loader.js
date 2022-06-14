@@ -7,7 +7,7 @@ $( "#header" ).load( "/Emerald-Isles/assets/html/navbar.html", function () {
             if (href) {
                 splitHref[0] += (splitHref[0].match(/\?/) ? '&' : '?') + 'GM';
                 href = splitHref[0] + '#' + splitHref[1];
-                console.log(href);
+                $(this).attr('href', href);
             };
         });
     };
