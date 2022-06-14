@@ -802,9 +802,12 @@ blockquote p {
   margin: 5px 0;
   line-height: 1.25em;
   font-size: 0.9em;
+  color: #ffffffd0;
 }
 blockquote span {
   font-weight: bold;
+  font-style: italic;
+  color: #ffffff;
 }
 blockquote hr {
   margin: 0.5rem 0;
