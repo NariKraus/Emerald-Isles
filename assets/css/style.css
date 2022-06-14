@@ -798,6 +798,11 @@ section {
 /*--------------------------------------------------------------
 # Playable Races Info
 --------------------------------------------------------------*/
+#race-info {
+  max-height: 602px;
+  overflow-y: scroll;
+}
+
 blockquote p {
   margin: 5px 0;
   line-height: 1.25em;
