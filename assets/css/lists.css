@@ -18,6 +18,16 @@
     color: #ffffff80;
 }
 
+@media (max-width: 992px) {
+    .list_body {
+        max-height: 169px;
+    }
+
+    .list {
+        margin-bottom: 2em;
+    }
+}
+
 .list_body {
     font-size: 0.8em;
     max-height: 578px;
