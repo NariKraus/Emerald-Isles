@@ -18,7 +18,7 @@
     color: #ffffff80;
 }
 
-.list {
+.list_body {
     font-size: 0.8em;
     max-height: 578px;
     overflow: scroll;
