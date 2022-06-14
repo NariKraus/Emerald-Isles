@@ -353,8 +353,9 @@
     <script src="assets/js/navbar-loader.js"></script>
 
     <script>
-        let params = (new URL(document.location)).searchParams;
-        let DM = params.get('DM');
+        var params = (new URL(document.location)).searchParams;
+        var DM = params.get('DM');
+        var race = params.get('race');
 
         $(document).ready(function() {
             for (let i = 0; i < $('.race-line .race-name').length; i++) {
@@ -383,101 +384,6 @@
             });
             return jsonTerrains;
         })();
-        
-        $.fn.dataTable.ext.search.push(
-            function( settings, data, dataIndex ) {
-
-                var terrain_type;
-
-                if ( $('.terrain-select').val() != undefined ) {
-                    terrain_type = $('.terrain-select').val();
-                }
-                else {
-                    terrain_type = '*';
-                };
-
-                var title = data[0];
-        
-                if ( jsonTerrains[terrain_type].includes( title ) ) {
-                    return true;
-                };
-                return false;
-            }
-        );
-
-        $(document).ready(function () {
-
-            // Setup - add a text input to each footer cell
-            $('#table thead tr')
-                .clone(true)
-                .addClass('filters')
-                .appendTo('#table thead');
-
-            var table = $('#table').DataTable({
-                orderCellsTop: true,
-                fixedHeader: true,
-                searching: true,
-                initComplete: function () {
-                    var api = this.api();
-
-                    // For each column
-                    api
-                        .columns()
-                        .eq(0)
-                        .each(function (colIdx) {
-                            // Set the header cell to contain the input element
-                            var cell = $('.filters th').eq(
-                                $(api.column(colIdx).header()).index()
-                            );
-                            var title = $(cell).text();
-                            $(cell).html('<input type="text" placeholder="' + title + '" />');
-
-                            // On every keypress in this input
-                            $(
-                                'input',
-                                $('.filters th').eq($(api.column(colIdx).header()).index())
-                            )
-                                .off('keyup change')
-                                .on('keyup change', function (e) {
-                                    e.stopPropagation();
-
-                                    // Get the search value
-                                    $(this).attr('title', $(this).val());
-                                    var regexr = '({search})'; //$(this).parents('th').find('select').val();
-
-                                    var cursorPosition = this.selectionStart;
-                                    // Search the column for that value
-                                    api
-                                        .column(colIdx)
-                                        .search(
-                                            this.value != ''
-                                                ? regexr.replace('{search}', '(((' + this.value + ')))')
-                                                : '',
-                                            this.value != '',
-                                            this.value == ''
-                                        )
-                                        .draw();
-
-                                    $(this)
-                                        .focus()[0]
-                                        .setSelectionRange(cursorPosition, cursorPosition);
-                                });
-                        });
-                },
-            });
-
-            $('#table_wrapper').find('.row:first').remove();
-
-            $('#table_wrapper').prepend('<div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="table_length"><label>Show <select name="table_length" aria-controls="table" class="form-select form-select-sm terrain-select"><option class="text-start" value="*">All</option><option class="text-start" value="Coast">Coast</option><option class="text-start" value="Desert">Desert</option><option class="text-start" value="Forest">Forest</option><option class="text-start" value="Grassland">Grassland</option><option class="text-start" value="Mountain">Mountain</option><option class="text-start" value="Swamp">Swamp</option></select> dwellers</label></div></div>');
-
-            $('#table_wrapper').find('.row:last').find('.col-md-5').addClass('col-md-6').removeClass('col-md-5')
-            $('#table_wrapper').find('.row:last').find('.col-md-7').addClass('col-md-6').removeClass('col-md-7')
-
-            $('.terrain-select').on( 'change', function() {
-                table.draw();
-            });
-
-        });
     </script>
 
 </body>
