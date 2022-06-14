@@ -358,11 +358,13 @@
 
         if (document.location.hash != '') {
             loadRace(document.location.hash);
+        } else {
+            loadRace('#Rules')
         };
 
         $('a[listID]').click(function () {
-            $('#race-info').scrollTop(0);
             loadRace( '#' + $(this).attr('listID') );
+            $('#race-info').scrollTop(0);
         });
             
     </script>
