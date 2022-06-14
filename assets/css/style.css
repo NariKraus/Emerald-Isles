@@ -809,7 +809,7 @@ blockquote p {
   font-size: 0.9em;
   color: #ffffffc0;
   text-indent: -1em;
-  margin-left: 1em;
+  margin-left: 1.25em;
 }
 blockquote span {
   font-weight: bold;
