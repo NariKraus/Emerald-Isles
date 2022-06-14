@@ -808,6 +808,8 @@ blockquote p {
   line-height: 1.25em;
   font-size: 0.9em;
   color: #ffffffc0;
+  text-indent: -1em;
+  margin-left: 1em;
 }
 blockquote span {
   font-weight: bold;
