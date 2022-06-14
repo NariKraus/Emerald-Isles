@@ -357,6 +357,12 @@
         if (document.location.hash != '') {
             loadRace(document.location.hash);
         };
+
+        $('a[listID]').click(function () {
+            $('#race-info').scrollTop(0);
+            loadRace( '#' + $(this).attr('listID') );
+        });
+            
     </script>
 
 </body>
