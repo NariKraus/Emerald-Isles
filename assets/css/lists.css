@@ -14,7 +14,7 @@
     text-decoration: none;
     border-bottom: solid 1px 0 #444;
 }
-.sort_disabled {
+.list small {
     color: #ffffff80;
 }
 
