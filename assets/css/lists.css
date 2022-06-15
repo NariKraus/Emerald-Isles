@@ -16,6 +16,7 @@
 }
 .list small {
     color: #ffffff80;
+    font-size: inherit;
 }
 
 @media (max-width: 1200px) {
